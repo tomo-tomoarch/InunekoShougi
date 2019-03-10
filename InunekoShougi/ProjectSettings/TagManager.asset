@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 4063561687
+    locked: 0
+  - name: koma
+    uniqueID: 1944563851
+    locked: 0
