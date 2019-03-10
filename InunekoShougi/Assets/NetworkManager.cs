@@ -50,12 +50,12 @@ public class NetworkManager : MonoBehaviour {
         if(PhotonNetwork.playerList.Length == 1)
         {
             sceneCamera.enabled = true;
-           // StartCoroutine("SpawnPlayer", respawnTime);
+          
+            // StartCoroutine("SpawnPlayer", respawnTime);
         }
         else
         {
-            sceneCamera.enabled = false;
-            sceneCamera2.enabled = true;
+            sceneCamera.transform.rotation = Quaternion.Euler(0, 0, 180);
             //StartCoroutine("SpawnPlayer", respawnTime);
         }
        

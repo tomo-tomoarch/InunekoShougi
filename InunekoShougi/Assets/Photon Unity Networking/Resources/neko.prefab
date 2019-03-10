@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3154037983331524107}
   - component: {fileID: 3154037983331522949}
   - component: {fileID: 3154037983331524111}
+  - component: {fileID: 9109487720847029546}
   m_Layer: 0
   m_Name: neko
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1944563851
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300034, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
+  m_Sprite: {fileID: 21300016, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -223,7 +224,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3154037983331522563}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -258,14 +259,27 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
-  synchronization: 0
+  synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 0}
+  - {fileID: 9109487720847029546}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &9109487720847029546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3154037983331522563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61069d62b4f7d1e4c9f83a120180dd9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedNum: 0
