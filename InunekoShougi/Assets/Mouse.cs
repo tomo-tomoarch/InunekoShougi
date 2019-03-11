@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Mouse : MonoBehaviour
 {
+    MasuHandler masuHandler;
     public float xzahyou;
     public float yzahyou;
 
@@ -12,6 +13,11 @@ public class Mouse : MonoBehaviour
     private Vector3 screenPoint;
     private Vector3 offset;
 
+    private void Start()
+    {
+        masuHandler = GameObject.Find("MasuHandler").GetComponent<MasuHandler>();
+    }
+
     void OnMouseDown()
     {
             this.screenPoint = Camera.main.WorldToScreenPoint(transform.position);
@@ -19,7 +25,10 @@ public class Mouse : MonoBehaviour
 
         xzahyou = transform.position.x;
         yzahyou = transform.position.y;
-             
+
+        masuHandler.MasuCordinator(xzahyou, yzahyou);
+
+
     }
 
     void OnMouseDrag()
