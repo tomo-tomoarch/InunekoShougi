@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class MasuHandler : MonoBehaviour
 {
+    DirectionDeterminator directionDeterminator;
     public int masuNum;
+    public int komaShu;
+    public bool komaNaru;
 
-    public void MasuCordinator(float x, float y)
+    public void MasuCordinator(float x, float y,int cardIndex,bool Naru)
     {
         if (-1.5f > x && x > -2.5f)
         {
@@ -37,7 +40,7 @@ public class MasuHandler : MonoBehaviour
             }
             else
             {
-                Debug.Log("failed01");
+                masuNum = 26;
             }
         }
         else if (-0.5f > x && x > -1.5f)
@@ -69,7 +72,7 @@ public class MasuHandler : MonoBehaviour
             }
             else
             {
-                Debug.Log("failed01");
+                masuNum = 26;
             }
         }
         else if (0.5f > x && x > -0.5f)
@@ -101,7 +104,7 @@ public class MasuHandler : MonoBehaviour
             }
             else
             {
-                Debug.Log("failed01");
+                masuNum = 26;
             }
         }
         else if (1.5f > x && x > 0.5f)
@@ -133,7 +136,7 @@ public class MasuHandler : MonoBehaviour
             }
             else
             {
-                Debug.Log("failed01");
+                masuNum = 26; 
             }
         }
         else if (2.5f > x && x > 1.5f)
@@ -165,19 +168,23 @@ public class MasuHandler : MonoBehaviour
             }
             else
             {
-                Debug.Log("failed01");
+                masuNum = 26;
             }
         }
         else
         {
-            Debug.Log("failed02");
+            masuNum = 26;
         }
+
+        komaShu = cardIndex;
+        komaNaru = Naru;
+        directionDeterminator.DirectionDetermine(komaNaru, komaShu);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       directionDeterminator = GameObject.Find("DirectionDeterminator").GetComponent<DirectionDeterminator>();
     }
 
     // Update is called once per frame

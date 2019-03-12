@@ -113,6 +113,7 @@ MonoBehaviour:
   - {fileID: 21300022, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
   cardIndex: 1
   komaBackIndex: 0
+  naru: 0
 --- !u!114 &1355841766983253531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450bd330da6ae0f4a85d6c72774e3958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xzahyou: 0
+  yzahyou: 0
+  KomaShu: 0
+  KomaNaru: 0
+  YukoGoma: 0
 --- !u!114 &1355841766983253524
 MonoBehaviour:
   m_ObjectHideFlags: 0

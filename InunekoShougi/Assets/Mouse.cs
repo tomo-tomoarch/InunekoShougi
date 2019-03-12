@@ -5,8 +5,16 @@ using UnityEngine;
 public class Mouse : MonoBehaviour
 {
     MasuHandler masuHandler;
+    KomaModel komaModel;
+    DirectionDeterminator directionDeterminator;
+
+    Collider2D m_ObjectCollider;
+
     public float xzahyou;
     public float yzahyou;
+    public int KomaShu;
+    public int KomaNaru;
+    public int YukoGoma;
 
     //マウスでドラッグするスクリプト
 
@@ -15,7 +23,9 @@ public class Mouse : MonoBehaviour
 
     private void Start()
     {
+        directionDeterminator = GameObject.Find("DirectionDeterminator").GetComponent<DirectionDeterminator>();
         masuHandler = GameObject.Find("MasuHandler").GetComponent<MasuHandler>();
+        komaModel = GetComponent<KomaModel>();
     }
 
     void OnMouseDown()
@@ -25,9 +35,25 @@ public class Mouse : MonoBehaviour
 
         xzahyou = transform.position.x;
         yzahyou = transform.position.y;
+        KomaShu = komaModel.cardIndex;
+        KomaNaru = komaModel.komaBackIndex;
 
-        masuHandler.MasuCordinator(xzahyou, yzahyou);
+        if (komaModel.naru)
+        {
+            YukoGoma = KomaNaru;
+        }
+        else
+        {
+            YukoGoma = KomaShu;
+        }
+       
+        masuHandler.MasuCordinator(xzahyou, yzahyou,YukoGoma,komaModel.naru);
 
+       
+        m_ObjectCollider = GetComponent<BoxCollider2D>();
+        m_ObjectCollider.isTrigger = false;
+
+        Debug.Log("mousedown");
 
     }
 
@@ -36,5 +62,29 @@ public class Mouse : MonoBehaviour
         Vector3 currentScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
         Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenPoint) + this.offset;
         transform.position = currentPosition;
+    }
+
+    void OnMouseUp()
+    {
+        xzahyou = transform.position.x;
+        yzahyou = transform.position.y;
+        KomaShu = komaModel.cardIndex;
+        KomaNaru = komaModel.komaBackIndex;
+
+        if (komaModel.naru)
+        {
+            YukoGoma = KomaNaru;
+        }
+        else
+        {
+            YukoGoma = KomaShu;
+        }
+
+        masuHandler.MasuCordinator(xzahyou, yzahyou, YukoGoma, komaModel.naru);
+
+        m_ObjectCollider = GetComponent<BoxCollider2D>();
+        m_ObjectCollider.isTrigger = true;
+
+        directionDeterminator.ResetAll(masuHandler.masuNum);
     }
 }

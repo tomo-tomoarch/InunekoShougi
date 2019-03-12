@@ -13,6 +13,7 @@ public class KomaModel : MonoBehaviour
 
     public int cardIndex;　// 外部から参照できるcardIndex という値の宣言。
     public int komaBackIndex;
+    public bool naru;
 
     public void ToggleFace(int showFace)　//外部アクセス可能なToggleFaceというメソッドの定義　引数に真偽値としてshowFaceを取る。
     {
@@ -20,16 +21,38 @@ public class KomaModel : MonoBehaviour
         if (showFace == 0)　// もし showface がtrueであれば、
         {
             spriteRenderer.sprite = faces[cardIndex];  //②で取得したspriteにfaces[与えられたインデックス値]をレンダーさせる。
+            naru = false;
         }
         else
         {
             if (showFace == 2)
             {
-                spriteRenderer.sprite = komaNaru[komaBackIndex];
+                naru = true;
+
+                if (cardIndex == 0)
+                {
+                    spriteRenderer.sprite = komaBack;
+                }else if (cardIndex == 1)
+                {
+                    spriteRenderer.sprite = komaNaru[0];
+                }
+                else if (cardIndex == 2)
+                {
+                    spriteRenderer.sprite = komaNaru[1];
+                }
+                else if (cardIndex == 3)
+                {
+                    spriteRenderer.sprite = komaNaru[2];
+                }
+                else if (cardIndex == 4)
+                {
+                    spriteRenderer.sprite = komaBack;
+                }
             }
             else
             {
-                spriteRenderer.sprite = komaBack;　　//②で取得したspriteにcardbackをレンダーさせる。
+                naru = false;
+                spriteRenderer.sprite = komaBack;　　
             }
 
         }
