@@ -89,7 +89,7 @@ public class NetworkManager : MonoBehaviour {
             {
 
                     float co = cardOffset * cardCount; //オフセット幅の計算
-                    Vector3 temp = startfirst + new Vector3(-3.1f -co, 1.5f);
+                    Vector3 temp = startfirst + new Vector3(-3.1f -co, 1.5f,-1.0f);
                     GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("neko", temp, spawnPoints[index].rotation, 0);
                     
                     KomaModel cardModel = cardCopy.GetComponent<KomaModel>();
