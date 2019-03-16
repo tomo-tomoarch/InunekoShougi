@@ -16,17 +16,29 @@ public class DirectionDeterminator : Photon.MonoBehaviour
         masuHandler = GameObject.Find("MasuHandler").GetComponent<MasuHandler>();
     }
 
-    public void DirectionDetermine(bool Naru, int Shu)
+    public void DirectionDetermine(bool Naru, int Shu, int field)
     {
         if (Naru == false && Shu == 0 && PhotonNetwork.player.ID == 1)//金の場合
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0)
             {
-                int i;
-                for (i = 16; i < 26; i++)
+                if(field == 0)
                 {
-                    Masu[i].GetComponent<BoxCollider2D>().enabled = false;
-                    Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    int i;
+                    for (i = 16; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
+                }
+                else
+                {
+                    int i;
+                    for (i = 1; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
                 }
             }
             else if (masuHandler.masuNum < 6)//上段の場合
@@ -157,12 +169,25 @@ public class DirectionDeterminator : Photon.MonoBehaviour
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0)
             {
-                int i;
-                for (i = 1; i < 11; i++)
+                if(field == 0)
                 {
-                    Masu[i].GetComponent<BoxCollider2D>().enabled = false;
-                    Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    int i;
+                    for (i = 1; i < 11; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
                 }
+                else
+                {
+                    int i;
+                    for (i = 1; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
+                }
+                
             }
             else if (masuHandler.masuNum < 6)//上段の場合
             {
@@ -295,11 +320,23 @@ public class DirectionDeterminator : Photon.MonoBehaviour
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0)
             {
-                int i;
-                for (i = 16; i < 26; i++)
+                if (field == 0)
                 {
-                    Masu[i].GetComponent<BoxCollider2D>().enabled = false;
-                    Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    int i;
+                    for (i = 16; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
+                }
+                else
+                {
+                    int i;
+                    for (i = 11; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
                 }
             }
             else if (masuHandler.masuNum == 12 || masuHandler.masuNum == 13 || masuHandler.masuNum == 14 ||
@@ -327,11 +364,23 @@ public class DirectionDeterminator : Photon.MonoBehaviour
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0)
             {
-                int i;
-                for (i = 1; i < 11; i++)
+                if (field == 0)
                 {
-                    Masu[i].GetComponent<BoxCollider2D>().enabled = false;
-                    Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    int i;
+                    for (i = 1; i < 11; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
+                }
+                else
+                {
+                    int i;
+                    for (i = 1; i < 16; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
                 }
             }
             else if (masuHandler.masuNum == 12 || masuHandler.masuNum == 13 || masuHandler.masuNum == 14 ||
@@ -359,11 +408,23 @@ public class DirectionDeterminator : Photon.MonoBehaviour
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0 )
             {
-                int i;
-                for (i = 16; i < 26; i++)
+                if (field == 0)
                 {
-                    Masu[i].GetComponent<BoxCollider2D>().enabled = false;
-                    Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    int i;
+                    for (i = 16; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
+                }
+                else
+                {
+                    int i;
+                    for (i = 1; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
                 }
             }
             else
@@ -395,11 +456,23 @@ public class DirectionDeterminator : Photon.MonoBehaviour
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0 )
             {
-                int i;
-                for (i = 1; i < 11; i++)
+                if (field == 0)
                 {
-                    Masu[i].GetComponent<BoxCollider2D>().enabled = false;
-                    Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    int i;
+                    for (i = 1; i < 11; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
+                }
+                else
+                {
+                    int i;
+                    for (i = 1; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
                 }
             }
             else
@@ -431,11 +504,23 @@ public class DirectionDeterminator : Photon.MonoBehaviour
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0)
             {
-                int i;
-                for (i = 16; i < 26; i++)
+                if (field == 0)
                 {
-                    Masu[i].GetComponent<BoxCollider2D>().enabled = false;
-                    Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    int i;
+                    for (i = 16; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
+                }
+                else
+                {
+                    int i;
+                    for (i = 1; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
                 }
             }
             else
@@ -598,11 +683,23 @@ public class DirectionDeterminator : Photon.MonoBehaviour
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0)
             {
-                int i;
-                for (i = 1; i < 11; i++)
+                if (field == 0)
                 {
-                    Masu[i].GetComponent<BoxCollider2D>().enabled = false;
-                    Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    int i;
+                    for (i = 1; i < 11; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
+                }
+                else
+                {
+                    int i;
+                    for (i = 1; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
                 }
             }
             else
@@ -765,11 +862,23 @@ public class DirectionDeterminator : Photon.MonoBehaviour
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0)
             {
-                int i;
-                for (i = 16; i < 26; i++)
+                if (field == 0)
                 {
-                    Masu[i].GetComponent<BoxCollider2D>().enabled = false;
-                    Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    int i;
+                    for (i = 16; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
+                }
+                else
+                {
+                    int i;
+                    for (i = 1; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
                 }
             }
             else if (masuHandler.masuNum < 6)//上段の場合
@@ -917,11 +1026,23 @@ public class DirectionDeterminator : Photon.MonoBehaviour
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0)
             {
-                int i;
-                for (i = 1; i < 11; i++)
+                if (field == 0)
                 {
-                    Masu[i].GetComponent<BoxCollider2D>().enabled = false;
-                    Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    int i;
+                    for (i = 1; i < 11; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
+                }
+                else
+                {
+                    int i;
+                    for (i = 1; i < 26; i++)
+                    {
+                        Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                        Masu[i].GetComponent<MeshRenderer>().enabled = false;
+                    }
                 }
             }
             else if (masuHandler.masuNum < 6)//上段の場合

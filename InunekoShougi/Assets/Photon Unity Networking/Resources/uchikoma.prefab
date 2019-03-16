@@ -115,6 +115,7 @@ MonoBehaviour:
   cardIndex: 1
   komaBackIndex: 0
   naru: 0
+  komaNariField: 1
 --- !u!114 &5444932370730312711
 MonoBehaviour:
   m_ObjectHideFlags: 0

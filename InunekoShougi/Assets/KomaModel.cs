@@ -14,6 +14,7 @@ public class KomaModel : MonoBehaviour
     public int cardIndex;　// 外部から参照できるcardIndex という値の宣言。
     public int komaBackIndex;
     public bool naru;
+    public int komaNariField;
 
     public void ToggleFace(int showFace)　//外部アクセス可能なToggleFaceというメソッドの定義　引数に真偽値としてshowFaceを取る。
     {

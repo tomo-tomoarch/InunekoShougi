@@ -8,8 +8,9 @@ public class MasuHandler : MonoBehaviour
     public int masuNum;
     public int komaShu;
     public bool komaNaru;
+    public int komanarifield;
 
-    public void MasuCordinator(float x, float y,int cardIndex,bool Naru)
+    public void MasuCordinator(float x, float y,int cardIndex,bool Naru,int field)
     {
         if (-1.5f > x && x > -2.5f)
         {
@@ -178,7 +179,9 @@ public class MasuHandler : MonoBehaviour
 
         komaShu = cardIndex;
         komaNaru = Naru;
-        directionDeterminator.DirectionDetermine(komaNaru, komaShu);
+        komanarifield =field;
+
+    directionDeterminator.DirectionDetermine(komaNaru, komaShu,komanarifield);
     }
 
     // Start is called before the first frame update

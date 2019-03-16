@@ -54,7 +54,7 @@ public class Mouse : Photon.MonoBehaviour
             YukoGoma = KomaShu;
         }
        
-        masuHandler.MasuCordinator(xzahyou, yzahyou,YukoGoma,komaModel.naru);
+        masuHandler.MasuCordinator(xzahyou, yzahyou,YukoGoma,komaModel.naru,komaModel.komaNariField); //引数を加える。
 
        
         m_ObjectCollider = GetComponent<BoxCollider2D>();
@@ -89,7 +89,7 @@ public class Mouse : Photon.MonoBehaviour
             YukoGoma = KomaShu;
         }
 
-        masuHandler.MasuCordinator(xzahyou, yzahyou, YukoGoma, komaModel.naru);
+        masuHandler.MasuCordinator(xzahyou, yzahyou, YukoGoma, komaModel.naru, komaModel.komaNariField);
 
         m_ObjectCollider = GetComponent<BoxCollider2D>();
         m_ObjectCollider.isTrigger = true;
@@ -137,17 +137,8 @@ public class Mouse : Photon.MonoBehaviour
                     KomaModel cardModel = cardCopy.GetComponent<KomaModel>();
                     cardModel.cardIndex = j;
                     cardModel.ToggleFace(1);
-                }
-                    
-                   
-                                                       
+                }                                                                                         
             }
-        }
-           
-        
-        
-        
-        
-    }
- 
+        }                                 
+    } 
 }

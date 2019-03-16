@@ -107,6 +107,11 @@ MonoBehaviour:
   - {fileID: 21300028, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
   - {fileID: 21300030, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
   - {fileID: 21300032, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
+  - {fileID: 21300024, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
+  - {fileID: 21300026, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
+  - {fileID: 21300028, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
+  - {fileID: 21300030, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
+  - {fileID: 21300032, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
   komaBack: {fileID: 21300034, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
   komaNaru:
   - {fileID: 21300018, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
