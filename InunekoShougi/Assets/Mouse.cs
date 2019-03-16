@@ -17,7 +17,7 @@ public class Mouse : Photon.MonoBehaviour
     public float yzahyou;
     public int KomaShu;
     public int KomaNaru;
-    public int YukoGoma;
+
 
     public AudioSource dog;
     public AudioSource cat;
@@ -44,17 +44,8 @@ public class Mouse : Photon.MonoBehaviour
         yzahyou = transform.position.y;
         KomaShu = komaModel.cardIndex;
         KomaNaru = komaModel.komaBackIndex;
-
-        if (komaModel.naru)
-        {
-            YukoGoma = KomaNaru;
-        }
-        else
-        {
-            YukoGoma = KomaShu;
-        }
        
-        masuHandler.MasuCordinator(xzahyou, yzahyou,YukoGoma,komaModel.naru,komaModel.komaNariField); //引数を加える。
+        masuHandler.MasuCordinator(xzahyou, yzahyou, KomaShu, komaModel.naru,komaModel.komaNariField); //引数を加える。
 
        
         m_ObjectCollider = GetComponent<BoxCollider2D>();
@@ -80,16 +71,7 @@ public class Mouse : Photon.MonoBehaviour
         KomaShu = komaModel.cardIndex;
         KomaNaru = komaModel.komaBackIndex;
 
-        if (komaModel.naru)
-        {
-            YukoGoma = KomaNaru;
-        }
-        else
-        {
-            YukoGoma = KomaShu;
-        }
-
-        masuHandler.MasuCordinator(xzahyou, yzahyou, YukoGoma, komaModel.naru, komaModel.komaNariField);
+        masuHandler.MasuCordinator(xzahyou, yzahyou, KomaShu, komaModel.naru, komaModel.komaNariField);
 
         m_ObjectCollider = GetComponent<BoxCollider2D>();
         m_ObjectCollider.isTrigger = true;
