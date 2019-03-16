@@ -29,22 +29,22 @@ public class KomaModel : MonoBehaviour
             {
                 naru = true;
 
-                if (cardIndex == 0)
+                if (cardIndex == 0)//金の場合
                 {
                     spriteRenderer.sprite = komaBack;
-                }else if (cardIndex == 1)
+                }else if (cardIndex == 1)//桂馬の場合
                 {
                     spriteRenderer.sprite = komaNaru[0];
                 }
-                else if (cardIndex == 2)
+                else if (cardIndex == 2)//飛車の場合
                 {
                     spriteRenderer.sprite = komaNaru[1];
                 }
-                else if (cardIndex == 3)
+                else if (cardIndex == 3)//角の場合
                 {
                     spriteRenderer.sprite = komaNaru[2];
                 }
-                else if (cardIndex == 4)
+                else if (cardIndex == 4)//玉の場合
                 {
                     spriteRenderer.sprite = komaBack;
                 }

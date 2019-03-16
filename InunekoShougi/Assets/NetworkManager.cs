@@ -21,7 +21,7 @@ public class NetworkManager : MonoBehaviour {
     void Start()
     {
         PhotonNetwork.logLevel = PhotonLogLevel.Full;
-        PhotonNetwork.ConnectUsingSettings("0.1");
+        PhotonNetwork.ConnectUsingSettings("0.2");
 
         //deck = GetComponent<Deck>(); //Deck.csの取得
         deck = GameObject.Find("Deck").GetComponent<Deck>();
