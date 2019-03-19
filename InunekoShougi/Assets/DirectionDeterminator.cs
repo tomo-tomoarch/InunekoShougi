@@ -1173,7 +1173,7 @@ public class DirectionDeterminator : Photon.MonoBehaviour
 
             }
         }
-        else if (Naru == true && Shu == 3 && PhotonNetwork.player.ID != 1)//角の場合 犬猫
+        else if (Naru == true && Shu == 3 )//角の場合 犬猫
         {
             int i;
             for (i = 1; i < 26; i++)

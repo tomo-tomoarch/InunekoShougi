@@ -109,9 +109,9 @@ MonoBehaviour:
   - {fileID: 21300032, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
   komaBack: {fileID: 21300034, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
   komaNaru:
-  - {fileID: 21300000, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
-  - {fileID: 21300002, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
-  - {fileID: 21300004, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
+  - {fileID: 21300018, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
+  - {fileID: 21300020, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
+  - {fileID: 21300022, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
   cardIndex: 1
   komaBackIndex: 0
   naru: 0
@@ -389,6 +389,5 @@ MonoBehaviour:
   yzahyou: 0
   KomaShu: 0
   KomaNaru: 0
-  YukoGoma: 0
   dog: {fileID: 0}
   cat: {fileID: 0}

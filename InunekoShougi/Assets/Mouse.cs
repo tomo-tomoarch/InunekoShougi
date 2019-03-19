@@ -87,8 +87,9 @@ public class Mouse : Photon.MonoBehaviour
             {
             if (Mathf.Abs(koma[i].transform.position.x - xzahyou) <= 0.2f && Mathf.Abs(koma[i].transform.position.y - yzahyou) <= 0.2f && Mathf.Abs(koma[i].transform.position.x - xzahyou) != 0)
             {
-                    Debug.Log(koma[i].transform.position.x - xzahyou);
-                    Debug.Log(koma[i].transform.position.y - yzahyou);
+                    //Debug.Log(koma[i].transform.position.x - xzahyou);
+                    //Debug.Log(koma[i].transform.position.y - yzahyou);
+
                     koma[i].GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.player.ID);
                     KomaModel komaModel = koma[i].GetComponent<KomaModel>();
                     int j = komaModel.cardIndex;
