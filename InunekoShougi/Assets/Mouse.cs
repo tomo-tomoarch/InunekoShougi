@@ -95,6 +95,12 @@ public class Mouse : Photon.MonoBehaviour
                     int j = komaModel.cardIndex;
 
                 int index = PhotonNetwork.player.ID - 1;
+
+                if(index > 1)
+                {
+                    index = 1;
+                }
+
                 PhotonNetwork.Destroy(koma[i]);
 
                 if (PhotonNetwork.player.ID == 1)

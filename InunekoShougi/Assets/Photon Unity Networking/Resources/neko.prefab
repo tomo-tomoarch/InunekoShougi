@@ -120,6 +120,7 @@ MonoBehaviour:
   cardIndex: 1
   komaBackIndex: 0
   naru: 0
+  komaNariField: 0
 --- !u!114 &3154037983331524110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +140,6 @@ MonoBehaviour:
   yzahyou: 0
   KomaShu: 0
   KomaNaru: 0
-  YukoGoma: 0
   dog: {fileID: 0}
   cat: {fileID: 0}
 --- !u!114 &3154037983331524106
@@ -244,7 +244,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
