@@ -1173,7 +1173,7 @@ public class DirectionDeterminator : Photon.MonoBehaviour
 
             }
         }
-        else if (Naru == true && Shu == 3 )//角の場合 犬猫
+        else if (Naru == true && Shu == 3)//角の場合 犬猫
         {
             int i;
             for (i = 1; i < 26; i++)
@@ -1698,6 +1698,15 @@ public class DirectionDeterminator : Photon.MonoBehaviour
                 }
             }
 
+        }
+        else if ( Shu == 5)//マタタビホネの場合
+        {
+            int i;
+            for (i = 1; i < 26; i++)
+            {
+                Masu[i].GetComponent<BoxCollider2D>().enabled = false;
+                Masu[i].GetComponent<MeshRenderer>().enabled = false;
+            }
         }
     }
 

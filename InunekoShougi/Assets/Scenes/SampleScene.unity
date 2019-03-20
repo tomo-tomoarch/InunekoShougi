@@ -3805,6 +3805,7 @@ MonoBehaviour:
   masuNum: 0
   komaShu: 0
   komaNaru: 0
+  komanarifield: 0
 --- !u!4 &1841745173
 Transform:
   m_ObjectHideFlags: 0
