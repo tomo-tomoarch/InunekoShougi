@@ -103,7 +103,7 @@ public class Mouse : Photon.MonoBehaviour
 
                 PhotonNetwork.Destroy(koma[i]);
 
-                if (PhotonNetwork.player.ID == 1)
+                if (j < 5 && PhotonNetwork.player.ID == 1)
                 {
                     dog = GetComponent<AudioSource>();
                     dog.Play(0);
@@ -115,7 +115,7 @@ public class Mouse : Photon.MonoBehaviour
                     cardModel.cardIndex = j;
                     cardModel.ToggleFace(1);
                 }
-                else
+                else if(j < 5 && PhotonNetwork.player.ID != 1)
                 {
                     cat= GetComponent<AudioSource>();
                     cat.Play(0);
@@ -126,7 +126,31 @@ public class Mouse : Photon.MonoBehaviour
                     KomaModel cardModel = cardCopy.GetComponent<KomaModel>();
                     cardModel.cardIndex = j;
                     cardModel.ToggleFace(1);
-                }                                                                                         
+                }
+                else if(j == 5 && PhotonNetwork.player.ID == 1)
+                {
+                    dog = GetComponent<AudioSource>();
+                    dog.Play(0);
+
+                    Vector3 temp = new Vector3(4.3f, -1.5f, -1.0f);//(-3.1f, 1.5f, -1.0f)
+                    GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("matatabi", temp, spawnPoints[index].rotation, 0);
+
+                    KomaModel cardModel = cardCopy.GetComponent<KomaModel>();
+                    cardModel.cardIndex = j;
+                    cardModel.ToggleFace(1);
+                }
+                else if (j == 5 && PhotonNetwork.player.ID != 1)
+                {
+                    cat = GetComponent<AudioSource>();
+                    cat.Play(0);
+
+                    Vector3 temp = new Vector3(-3.1f, 1.5f, -1.0f);
+                    GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("hone", temp, spawnPoints[index].rotation, 0);
+
+                    KomaModel cardModel = cardCopy.GetComponent<KomaModel>();
+                    cardModel.cardIndex = j;
+                    cardModel.ToggleFace(1);
+                }
             }
         }                                 
     } 

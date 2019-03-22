@@ -66,7 +66,7 @@ public class NetworkManager : MonoBehaviour {
             foreach (int i in deck.GetCards())
             {
                     float co = cardOffset * cardCount; //オフセット幅の計算
-                    Vector3 temp = startfirst + new Vector3(4.3f -co, -1.5f,-1.0f);
+                    Vector3 temp = startfirst + new Vector3(4.3f -co, -2f,-1.0f);
                     GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("Koma", temp, spawnPoints[index].rotation, 0);
                    
                     KomaModel cardModel = cardCopy.GetComponent<KomaModel>();
@@ -89,7 +89,7 @@ public class NetworkManager : MonoBehaviour {
             {
 
                     float co = cardOffset * cardCount; //オフセット幅の計算
-                    Vector3 temp = startfirst + new Vector3(-3.1f -co, 1.5f,-1.0f);
+                    Vector3 temp = startfirst + new Vector3(-3.1f -co, 2f,-1.0f);
                     GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("neko", temp, spawnPoints[index].rotation, 0);
                     
                     KomaModel cardModel = cardCopy.GetComponent<KomaModel>();
@@ -99,6 +99,13 @@ public class NetworkManager : MonoBehaviour {
                     cardCount++; //cardCountをインクリメント
 
             }
+
+            Vector3 matatabi = new Vector3(-3.7f, 1f, -1.0f);
+            GameObject matatabihone = (GameObject)PhotonNetwork.Instantiate("hone", matatabi, spawnPoints[index].rotation, 0);
+
+            KomaModel matatabiModel = matatabihone.GetComponent<KomaModel>();
+            matatabiModel.cardIndex = 5;
+            matatabiModel.ToggleFace(0);
         } 
     }
 
