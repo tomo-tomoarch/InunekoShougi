@@ -58,7 +58,7 @@ public class PlayerNetworkMover : Photon.MonoBehaviour
             if (clickedNum % 3 == 1) 
             {
                 cardModel.ToggleFace(0); //表をレンダー
-            }else if(clickedNum == 2)
+            }else if(clickedNum % 3 == 2)
             {
                 cardModel.ToggleFace(2); //裏をレンダー
             }
