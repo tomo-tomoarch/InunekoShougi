@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Lobby.unity
+    guid: caf8650565e3c50499cf8cd87c4bb6ea
+  - enabled: 1
+    path: Assets/Game.unity
+    guid: 957eb52b2fd35ae48ac60dcff725391f
   m_configObjects: {}

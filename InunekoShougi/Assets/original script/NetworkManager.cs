@@ -17,32 +17,32 @@ public class NetworkManager : MonoBehaviour {
     public Vector3 startfirst;
     public Vector3 startsecond;
     GameObject player;
+    /*
+      void Start()
+      {
+          //PhotonNetwork.logLevel = PhotonLogLevel.Full;
+          //PhotonNetwork.ConnectUsingSettings("0.2");
 
-    void Start()
-    {
-        PhotonNetwork.logLevel = PhotonLogLevel.Full;
-        PhotonNetwork.ConnectUsingSettings("0.2");
+          //deck = GetComponent<Deck>(); //Deck.csの取得
+          deck = GameObject.Find("Deck").GetComponent<Deck>();
+      }
 
-        //deck = GetComponent<Deck>(); //Deck.csの取得
-        deck = GameObject.Find("Deck").GetComponent<Deck>();
-    }
+          void Update()
+          {
+              connectionText.text = PhotonNetwork.connectionStateDetailed.ToString();
 
-    void Update()
-    {
-        connectionText.text = PhotonNetwork.connectionStateDetailed.ToString();
+          }
 
-    }
+          void OnJoinedLobby()
+          {
+              RoomOptions ro = new RoomOptions() { isVisible = true, maxPlayers = 2 };
+              PhotonNetwork.JoinOrCreateRoom("Tomo", ro, TypedLobby.Default);
 
-    void OnJoinedLobby()
-    {
-        RoomOptions ro = new RoomOptions() { isVisible = true, maxPlayers = 2 };
-        PhotonNetwork.JoinOrCreateRoom("Tomo", ro, TypedLobby.Default);
-
-    }
-
+          }
+      */
     public void StartSpawnProcess(float respawnTime)
     {
-        if(PhotonNetwork.playerList.Length == 1)
+        if(PhotonNetwork.player.ID == 1)
         {
             sceneCamera.enabled = true;
         }
@@ -52,10 +52,12 @@ public class NetworkManager : MonoBehaviour {
         }
     }
 
-    void OnJoinedRoom()
+    public void StartingProcess()
     {
+        deck = GameObject.Find("Deck").GetComponent<Deck>();
+
         StartSpawnProcess(0f);
-        if (PhotonNetwork.playerList.Length == 1)
+        if (PhotonNetwork.player.ID == 1)
         {
             int index = 0;
             int cardCount = 0;　//内部で使う値cardCountの宣言

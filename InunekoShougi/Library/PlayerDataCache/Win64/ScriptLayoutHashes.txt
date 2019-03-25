@@ -2,7 +2,8 @@ Win64
 PlayerPath?
 C:/Users/donnie brasco/Desktop/inunekoshougi/InunekoShougi.exe
 SceneListBegin?
-Assets/Scenes/SampleScene.unity
+Assets/Lobby.unity
+Assets/Game.unity
 SceneListEnd?
 39eb4122b25e4249ed1cd6893d0544fe Assembly-CSharp.dll:.HighlightOwnedGameObj
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PunTeams
@@ -211,6 +212,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 aa82b3ce4c0c9b227036c0337315c5d3 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e51c09a4cc447f11db225afcd8e3e490 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 0c7e76cb5b160261f9cc2569ec3db865 Assembly-CSharp.dll:.RPGCamera
+2ff8d0da6cfbc04ede55579957623a80 Assembly-CSharp.dll:.MatatabiModel
 f93eaf5d07a25df3b7c3013ce23264b5 Assembly-CSharp.dll:.OnClickCallMethod
 a7fdc7565fb5d0a515ff7026dc6e7a36 Assembly-CSharp.dll:.IELdemo
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GameLogic
@@ -276,4 +278,15 @@ e1b8eaae6a90f88343f8be6d517488f6 Assembly-CSharp.dll:.PhotonView
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ClickDetector
 e7e6571fb792bd5234807be154062d6f Assembly-CSharp.dll:.CubeExtra
-2ff8d0da6cfbc04ede55579957623a80 Assembly-CSharp.dll:.MatatabiModel
+704330f4538af63241233defed7ff169 Assembly-CSharp.dll:.LobbyCanvas
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.LobbyNetwork
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PlayerMovement
+69e4176b0eab2e172ea05d8be092fdc6 Assembly-CSharp.dll:.RoomListing
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PlayerNetwork
+1e75e134a944309b8ed23b56f021700c Assembly-CSharp.dll:.PlayerListing
+9546359939f2befdb9198e5496b854d2 Assembly-CSharp.dll:.CreateRoom
+47469d9970e1c3a18b188b2c953c3fa0 Assembly-CSharp.dll:.MainCanvasManager
+35aa7cd9a074efd410411496b359e9c9 Assembly-CSharp.dll:.RoomLayoutGroup
+769814bbd1f829cfaf8533a79b976eb8 Assembly-CSharp.dll:.PlayerLayoutGroup
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.CurrentRoomCanvas
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DDOL
