@@ -13,7 +13,7 @@ public class PlayerNetwork : MonoBehaviour
     private PhotonView PhotonView;
     private int PlayersInGame = 0;
 
-    // Start is called before the first frame update
+  
     private void Awake()
     {
 
@@ -45,6 +45,7 @@ public class PlayerNetwork : MonoBehaviour
     private void NonMasterLoadedGame()
     {
         PhotonView.RPC("RPC_LoadedGameScene", PhotonTargets.MasterClient);
+       
     }
 
     [PunRPC]

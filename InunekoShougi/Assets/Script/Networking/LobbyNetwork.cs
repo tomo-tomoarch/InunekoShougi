@@ -7,11 +7,14 @@ public class LobbyNetwork : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        print("connecting to server...");
-        PhotonNetwork.ConnectUsingSettings("0.4");
+        if (!PhotonNetwork.connected)
+        {
+            print("connecting to server...");
+            PhotonNetwork.ConnectUsingSettings("0.4");
+        }
     }
 
-    // Update is called once per frame
+ 
     private void OnConnectedToMaster()
     {
         print("connected to master.");
@@ -21,7 +24,7 @@ public class LobbyNetwork : MonoBehaviour
         PhotonNetwork.playerName = PlayerNetwork.Instance.PlayerName;
 
         PhotonNetwork.JoinLobby(TypedLobby.Default);
-
+     
 
     }
 

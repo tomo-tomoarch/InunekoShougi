@@ -12,8 +12,8 @@ public class CurrentRoomCanvas : MonoBehaviour
 
     public void OnClickStartDelayed()
     {
-        if (!PhotonNetwork.isMasterClient)
-          return;
+       if (!PhotonNetwork.isMasterClient)
+         return;
 
 
         PhotonNetwork.room.IsOpen = false;
