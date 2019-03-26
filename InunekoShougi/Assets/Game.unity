@@ -3053,7 +3053,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 8d804c8863accb0458362d2fa96ac648, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -3065,7 +3065,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30ED\u30D3\u30FC\u306B\u623B\u308B"
+  m_Text: "\u308D\u3073\u30FC\u306B\u3082\u3069\u308B"
 --- !u!222 &1388453149
 CanvasRenderer:
   m_ObjectHideFlags: 0

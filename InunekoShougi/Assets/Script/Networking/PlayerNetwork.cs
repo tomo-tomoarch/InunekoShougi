@@ -20,7 +20,7 @@ public class PlayerNetwork : MonoBehaviour
         Instance = this;
         PhotonView = GetComponent<PhotonView>();
 
-        PlayerName = "Tomo#" + Random.Range(1000, 9999);
+        PlayerName = "Player#" + Random.Range(1000, 9999);
 
         SceneManager.sceneLoaded += OnSceneFinishedLoading;
 
