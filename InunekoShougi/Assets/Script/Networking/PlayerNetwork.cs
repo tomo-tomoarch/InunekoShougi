@@ -11,7 +11,7 @@ public class PlayerNetwork : MonoBehaviour
     public static PlayerNetwork Instance;
     public string PlayerName{ get; private set;}
     private PhotonView PhotonView;
-    private int PlayersInGame = 0;
+    private int PlayersInGame = 0; 
 
   
     private void Awake()
@@ -23,10 +23,14 @@ public class PlayerNetwork : MonoBehaviour
         PlayerName = "Tomo#" + Random.Range(1000, 9999);
 
         SceneManager.sceneLoaded += OnSceneFinishedLoading;
+
+        PhotonNetwork.LoadLevel(1);
     }
 
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
     {
+        PlayersInGame = 0;// プレイヤー数のリセット
+
         if (scene.name == "Game")
         {
             if (PhotonNetwork.isMasterClient)
@@ -38,6 +42,7 @@ public class PlayerNetwork : MonoBehaviour
 
     private void MasterLoadedGame()
     {
+
         PhotonView.RPC("RPC_LoadedGameScene", PhotonTargets.MasterClient);
         PhotonView.RPC("RPC_LoadGameOthers", PhotonTargets.Others);
     }
@@ -51,7 +56,7 @@ public class PlayerNetwork : MonoBehaviour
     [PunRPC]
     private void RPC_LoadGameOthers()
     {
-        PhotonNetwork.LoadLevel(1);
+        PhotonNetwork.LoadLevel(2);
     
     }
 

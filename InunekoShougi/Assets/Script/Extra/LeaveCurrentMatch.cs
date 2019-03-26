@@ -7,7 +7,7 @@ public class LeaveCurrentMatch : MonoBehaviour
     public void OnClick_LeaveCurrentMatch()
     {
         PhotonNetwork.LeaveRoom();
-        PhotonNetwork.LoadLevel(0);
+        PhotonNetwork.LoadLevel(1);
     }
 
 
