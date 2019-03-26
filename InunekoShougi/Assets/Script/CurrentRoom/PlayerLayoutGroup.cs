@@ -85,11 +85,11 @@ public class PlayerLayoutGroup : MonoBehaviour
 
     public void OnClickRoomState()
     {
-        if (!PhotonNetwork.isMasterClient)
-            return;
+       // if (!PhotonNetwork.isMasterClient)
+       //     return;
 
-        PhotonNetwork.room.IsOpen = !PhotonNetwork.room.IsOpen;
-        PhotonNetwork.room.IsVisible = PhotonNetwork.room.IsOpen;
+       // PhotonNetwork.room.IsOpen = !PhotonNetwork.room.IsOpen;
+       // PhotonNetwork.room.IsVisible = PhotonNetwork.room.IsOpen;
     }
 
     public void OnClickLeaveRoom()

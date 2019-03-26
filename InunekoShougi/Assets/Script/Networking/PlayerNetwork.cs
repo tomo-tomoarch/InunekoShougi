@@ -61,6 +61,7 @@ public class PlayerNetwork : MonoBehaviour
         if(PlayersInGame == PhotonNetwork.playerList.Length)
         {
             print("All players are in the game scene.");
+            PhotonView.RPC("RPC_CreatePlayer", PhotonTargets.MasterClient);
             PhotonView.RPC("RPC_CreatePlayer", PhotonTargets.Others);
 
         }
