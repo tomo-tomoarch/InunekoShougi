@@ -863,7 +863,7 @@ public class DirectionDeterminator : Photon.MonoBehaviour
                                 }
                             }
                             tokuiten2 = masuHandler.masuNum + (4 * (k + 1));
-                            Debug.Log(tokuiten2 + "tokuiten2");
+                            //Debug.Log(tokuiten2 + "tokuiten2");
 
                             int j;
                             for (j = 0; j < 6; j++)
@@ -896,7 +896,7 @@ public class DirectionDeterminator : Photon.MonoBehaviour
                             }
                             tokuiten1 = masuHandler.masuNum - (4 * (k + 1));
 
-                            Debug.Log(tokuiten1 + "tokuiten1");
+                            //Debug.Log(tokuiten1 + "tokuiten1");
 
                             int j;
                             for (j = 0; j < masuHandler.masuNum / 4; j++)
@@ -1042,7 +1042,7 @@ public class DirectionDeterminator : Photon.MonoBehaviour
                                 }
                             }
                             tokuiten2 = masuHandler.masuNum + (4 * (k + 1));
-                            Debug.Log(tokuiten2 + "tokuiten2");
+                            //Debug.Log(tokuiten2 + "tokuiten2");
 
                             int j;
                             for (j = 0; j < 6; j++)
@@ -1075,7 +1075,7 @@ public class DirectionDeterminator : Photon.MonoBehaviour
                             }
                             tokuiten1 = masuHandler.masuNum - (4 * (k + 1));
 
-                            Debug.Log(tokuiten1 + "tokuiten1");
+                            //Debug.Log(tokuiten1 + "tokuiten1");
 
                             int j;
                             for (j = 0; j < masuHandler.masuNum / 4; j++)

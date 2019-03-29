@@ -189,6 +189,7 @@ bae14f4ccd4272b02cb3643d22a53ac8 Assembly-CSharp.dll:.PickupDemoGui
 15aa75104394eec0bc99c0cdb18f7155 Assembly-CSharp.dll:.PhotonTransformView
 17c6b61ef664ddb751d783bf4c747c64 Assembly-CSharp.dll:.OnClickDestroy
 1e3cccb005a36e8a4807cdda0ec0a42e Assembly-CSharp.dll:.AudioRpc
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TurnCheckerEnd
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 1e75e134a944309b8ed23b56f021700c Assembly-CSharp.dll:.PlayerListing
 d4dacc6750ca362eb286d08d4a339689 Assembly-CSharp.dll:.PickupItem
@@ -216,6 +217,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.OnAwakePhysicsSettings
 9c3b0e9378d4a08394355b70fbf503cf Assembly-CSharp.dll:.OnClickLoadSomething
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PointedAtGameObjectInfo
+56ff8439e78c71390af283d8cd8d944d Assembly-CSharp.dll:.INSCore
 510fefd6a544e16a3ffefa557ddcba39 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 9c7949ca961d7f4681c23793905b8911 Assembly-CSharp.dll:.CardFlipper
 8f2200cb392d1e2a620cbfa7d94f4f69 Assembly-CSharp.dll:.DoubleClick
@@ -240,6 +242,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 e1e615eaf73e560828f53edc8952e615 Assembly-CSharp.dll:.PunTurnManager
 02f4080ba1c4445bc64ac33fbccb6de3 Assembly-CSharp.dll:.DirectionDeterminator
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TurnChecker
 931f489e44eadf809e9310429c99dde5 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension

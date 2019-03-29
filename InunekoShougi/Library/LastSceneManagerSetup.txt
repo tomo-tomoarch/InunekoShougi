@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Lobby.unity
+- path: Assets/DDOL.unity
   isLoaded: 1
   isActive: 1

@@ -7,6 +7,8 @@ public class Mouse : Photon.MonoBehaviour
     MasuHandler masuHandler;
     KomaModel komaModel;
     DirectionDeterminator directionDeterminator;
+    TurnCheckerEnd turnCheckerEnd;
+    TurnChecker turnChecker;
 
     public Transform[] spawnPoints;
 
@@ -32,7 +34,8 @@ public class Mouse : Photon.MonoBehaviour
         directionDeterminator = GameObject.Find("DirectionDeterminator").GetComponent<DirectionDeterminator>();
         masuHandler = GameObject.Find("MasuHandler").GetComponent<MasuHandler>();
         komaModel = GetComponent<KomaModel>();
-        
+        turnCheckerEnd = GameObject.Find("TurnSystems").GetComponent<TurnCheckerEnd>();
+        turnChecker = GameObject.Find("TurnSystems").GetComponent<TurnChecker>();
     }
 
     void OnMouseDown()
@@ -51,7 +54,9 @@ public class Mouse : Photon.MonoBehaviour
         m_ObjectCollider = GetComponent<BoxCollider2D>();
         m_ObjectCollider.isTrigger = false;
 
-        Debug.Log("mousedown");
+        //Debug.Log("mousedown");
+
+        turnChecker.TurnCheck();
 
     }
 
@@ -152,6 +157,8 @@ public class Mouse : Photon.MonoBehaviour
                     cardModel.ToggleFace(1);
                 }
             }
-        }                                 
+        }
+
+        turnCheckerEnd.TurnCheckEnd();
     } 
 }

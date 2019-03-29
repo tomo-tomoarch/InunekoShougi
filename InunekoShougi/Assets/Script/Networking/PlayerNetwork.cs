@@ -6,7 +6,7 @@ public class PlayerNetwork : MonoBehaviour
 {
 
     NetworkManager networkManager;//追加
-
+    INSCore insCore;
 
     public static PlayerNetwork Instance;
     public string PlayerName{ get; private set;}
@@ -35,13 +35,16 @@ public class PlayerNetwork : MonoBehaviour
         {
             if (PhotonNetwork.isMasterClient)
                 MasterLoadedGame();
+            
             else
                 NonMasterLoadedGame();
+           
         }
     }
 
     private void MasterLoadedGame()
     {
+        Debug.Log("MasterLoadedGame");//1回目
 
         PhotonView.RPC("RPC_LoadedGameScene", PhotonTargets.MasterClient);
         PhotonView.RPC("RPC_LoadGameOthers", PhotonTargets.Others);
@@ -49,13 +52,14 @@ public class PlayerNetwork : MonoBehaviour
 
     private void NonMasterLoadedGame()
     {
-        PhotonView.RPC("RPC_LoadedGameScene", PhotonTargets.MasterClient);
-       
+        Debug.Log("NonMasterLoadedGame");
+        PhotonView.RPC("RPC_LoadedGameScene", PhotonTargets.MasterClient); 
     }
 
     [PunRPC]
     private void RPC_LoadGameOthers()
     {
+        Debug.Log("LoadGameOthers");//マスター側は呼ばれない
         PhotonNetwork.LoadLevel(2);
     
     }
@@ -66,7 +70,7 @@ public class PlayerNetwork : MonoBehaviour
         PlayersInGame++;
         if(PlayersInGame == PhotonNetwork.playerList.Length)
         {
-            print("All players are in the game scene.");
+            Debug.Log("All players are in the game scene.");//1回目
             PhotonView.RPC("RPC_CreatePlayer", PhotonTargets.MasterClient);
             PhotonView.RPC("RPC_CreatePlayer", PhotonTargets.Others);
 
@@ -78,5 +82,8 @@ public class PlayerNetwork : MonoBehaviour
     {
         networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
         networkManager.StartingProcess();
+
+        insCore = GameObject.Find("TurnSystems").GetComponent<INSCore>();
+        insCore.StartTurn();
     }
 }

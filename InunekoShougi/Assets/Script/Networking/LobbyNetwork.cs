@@ -10,7 +10,7 @@ public class LobbyNetwork : MonoBehaviour
         if (!PhotonNetwork.connected)
         {
             print("connecting to server...");
-            PhotonNetwork.ConnectUsingSettings("0.4");
+            PhotonNetwork.ConnectUsingSettings("0.5.1");
         }
     }
 

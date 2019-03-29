@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerLayoutGroup : MonoBehaviour
 {
+
     [SerializeField]
     private GameObject _playerListingPrefab;
     private GameObject PlayerListingPrefab
