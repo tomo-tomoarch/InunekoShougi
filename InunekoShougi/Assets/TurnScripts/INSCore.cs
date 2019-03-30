@@ -24,6 +24,8 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
     [SerializeField]
     private Text WaitingText;//待ってくださいのテキスト
 
+    private int number=0;
+
     private bool IsShowingResults;//真偽値
 
 
@@ -93,6 +95,7 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
         //Debug.Log("OnTurnBegins() turn: " + turn);
 
         IsShowingResults = false;
+        
 
     }
 
@@ -112,8 +115,15 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
     {
        if (PhotonNetwork.isMasterClient)
        {
-            this.turnManager.BeginTurn();//turnmanagerに新しいターンを始めさせる
-            PhotonView.RPC("RPC_AutomaticSend", PhotonTargets.All);
+            Debug.Log("StartTurn");
+
+            if(number == this.turnManager.Turn)
+            {
+                this.turnManager.BeginTurn();//turnmanagerに新しいターンを始めさせる
+                PhotonView.RPC("RPC_AutomaticSend", PhotonTargets.All);
+                number++;
+            }
+ 
        }
 
         //turnChecker.TurnCheck();
@@ -146,6 +156,8 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
 
             redFill = GameObject.Find("Red Fill").GetComponent<Image>();
             redFill.enabled = false;
+
+            Debug.Log("RPC_AutomaticSend");
         }
         else
         {

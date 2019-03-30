@@ -11,8 +11,9 @@ public class PlayerNetwork : MonoBehaviour
     public static PlayerNetwork Instance;
     public string PlayerName{ get; private set;}
     private PhotonView PhotonView;
-    private int PlayersInGame = 0; 
+    private int PlayersInGame = 0;
 
+    
   
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class PlayerNetwork : MonoBehaviour
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
     {
         PlayersInGame = 0;// プレイヤー数のリセット
+    
 
         if (scene.name == "Game")
         {
@@ -46,26 +48,26 @@ public class PlayerNetwork : MonoBehaviour
     {
         Debug.Log("MasterLoadedGame");//1回目
 
-        PhotonView.RPC("RPC_LoadedGameScene", PhotonTargets.MasterClient);
-        PhotonView.RPC("RPC_LoadGameOthers", PhotonTargets.Others);
+        PhotonView.RPC("RPC_LoadedGameScene", PhotonTargets.MasterClient);//1
+        PhotonView.RPC("RPC_LoadGameOthers", PhotonTargets.Others);//1
     }
 
     private void NonMasterLoadedGame()
     {
         Debug.Log("NonMasterLoadedGame");
-        PhotonView.RPC("RPC_LoadedGameScene", PhotonTargets.MasterClient); 
+        PhotonView.RPC("RPC_LoadedGameScene", PhotonTargets.MasterClient);//1B
     }
 
     [PunRPC]
-    private void RPC_LoadGameOthers()
+    private void RPC_LoadGameOthers()//2other
     {
-        Debug.Log("LoadGameOthers");//マスター側は呼ばれない
+        Debug.Log("LoadGameOthers");
         PhotonNetwork.LoadLevel(2);
     
     }
 
     [PunRPC]
-    private void RPC_LoadedGameScene()
+    private void RPC_LoadedGameScene()//2master , 2Bmaster
     {
         PlayersInGame++;
         if(PlayersInGame == PhotonNetwork.playerList.Length)
@@ -78,12 +80,15 @@ public class PlayerNetwork : MonoBehaviour
     }
 
     [PunRPC]
-    private void RPC_CreatePlayer()
+    private void RPC_CreatePlayer()//  3bmaster,other
     {
         networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
         networkManager.StartingProcess();
 
+     
         insCore = GameObject.Find("TurnSystems").GetComponent<INSCore>();
         insCore.StartTurn();
+          
+      
     }
 }
