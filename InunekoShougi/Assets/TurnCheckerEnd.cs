@@ -213,10 +213,10 @@ public class TurnCheckerEnd : Photon.MonoBehaviour
            
         }
 
-        if(endkomaPosition[0] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition0"])
+        if(endkomaPosition[0] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition0"])//駒の現在値とルームカスタムプロパティの値を比べる
         {
             Debug.Log(endkomaPosition[0]);
-            insCore.MakeTurn(0);
+            insCore.MakeTurn(0);//値が違う場合ターンを回す
         }
         if (endkomaPosition[1] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition1"])
         {

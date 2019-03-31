@@ -18,7 +18,7 @@ public class TurnChecker : Photon.MonoBehaviour
         var komaNari = new List<bool>();
         //var komaFlag = new List<bool>();
 
-        koma = GameObject.FindGameObjectsWithTag("koma");
+        koma = GameObject.FindGameObjectsWithTag("koma");//駒タグが付いているものを全部配列として拾う
       
 
         int i;
@@ -28,8 +28,8 @@ public class TurnChecker : Photon.MonoBehaviour
             y = koma[i].transform.position.y;
 
             KomaModel komaModel = koma[i].GetComponent<KomaModel>();
-            komaIndex.Add(komaModel.cardIndex);
-            komaNari.Add(komaModel.naru);
+            komaIndex.Add(komaModel.cardIndex);//駒インデックスのリストの作成（のちに使用予定
+            komaNari.Add(komaModel.naru);//駒が成っているかのリストの作成（のちに使用予定
 
             if (-1.5f > x && x > -2.5f)
             {
@@ -201,19 +201,6 @@ public class TurnChecker : Photon.MonoBehaviour
                 masuNum = 26;
                 komaPosition.Add(masuNum);
             }
-
-            /*
-            Debug.Log(komaPosition.Count);
-
-            int j;
-            for (j = 0; j < komaPosition.Count; j++)
-            {
-                var properties = new ExitGames.Client.Photon.Hashtable();
-                string card = PhotonNetwork.player.ID + "komaPosition" + j;
-                properties.Add(card, komaPosition[j]);
-                PhotonNetwork.room.SetCustomProperties(properties);
-                Debug.Log(card + komaPosition[j]);
-            }*/
         }
 
         int j;
@@ -222,8 +209,8 @@ public class TurnChecker : Photon.MonoBehaviour
             var properties = new ExitGames.Client.Photon.Hashtable();
             string card = PhotonNetwork.player.ID + "komaPosition" + j;
             properties.Add(card, komaPosition[j]);
-            PhotonNetwork.room.SetCustomProperties(properties);
-            //Debug.Log(card + komaPosition[j]);
+            PhotonNetwork.room.SetCustomProperties(properties);//駒の現在いるマスの値をルームカスタムプロパティに送る。
+
         }
     }
 }

@@ -33,7 +33,7 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
 
     private PunTurnManager turnManager;
 
-    public void Awake()// StartをAwakeにする。
+    public void Awake()// StartをAwakeに変更。
     {
         this.turnManager = this.gameObject.AddComponent<PunTurnManager>();//PunTurnManagerをコンポーネントに追加
         this.turnManager.TurnManagerListener = this;//リスナーを？
@@ -51,7 +51,7 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
         {
             var properties = new ExitGames.Client.Photon.Hashtable();
             string card = PhotonNetwork.player.ID + "komaPosition" + j;
-            properties.Add(card, null);
+            properties.Add(card, null);　//ルームカスタムプロパティのリセット
             PhotonNetwork.room.SetCustomProperties(properties);
         }
     }
@@ -76,8 +76,6 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
         {
             //後に処理を書く予定
         }
-            
-
     }
 
     public void OnPlayerFinished(PhotonPlayer photonPlayer, int turn, object move)//1
@@ -95,8 +93,6 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
         //Debug.Log("OnTurnBegins() turn: " + turn);
 
         IsShowingResults = false;
-        
-
     }
 
     public void OnTurnCompleted(int obj)//4ターン終了時に呼ばれるメソッド　（あなたのターン開始・終了みたいな文字を出す）
@@ -117,11 +113,11 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
        {
             Debug.Log("StartTurn");
 
-            if(number == this.turnManager.Turn)
+            if(number == this.turnManager.Turn)//BeginTurnが1ターンに1回しか回らないことのチェックをする。
             {
                 this.turnManager.BeginTurn();//turnmanagerに新しいターンを始めさせる
                 PhotonView.RPC("RPC_AutomaticSend", PhotonTargets.All);
-                number++;
+                number++;//BeginTurnが2回目以降1ターンに回る場合にはこの変数がターンと一致しないようにする
             }
  
        }
@@ -148,13 +144,13 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
     {
         Debug.Log(turnManager.Turn);
 
-        if ((this.turnManager.Turn % 2) + 1 == PhotonNetwork.player.ID)
+        if ((this.turnManager.Turn % 2) + 1 == PhotonNetwork.player.ID)//2ターンに1回自分のターンを無条件で終わらせる
         {
             int index = 0;
-            this.turnManager.SendMove(index, true);
-            this.WaitingText.text = "waiting for another player...";
+            this.turnManager.SendMove(index, true);　//無条件でターン終了
+            this.WaitingText.text = "waiting for another player...";　//待ちの表示テキスト
 
-            redFill = GameObject.Find("Red Fill").GetComponent<Image>();
+            redFill = GameObject.Find("Red Fill").GetComponent<Image>();//赤いバーを表示しない
             redFill.enabled = false;
 
             Debug.Log("RPC_AutomaticSend");
