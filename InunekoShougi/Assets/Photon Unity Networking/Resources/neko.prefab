@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3154037983331523066}
   - component: {fileID: 3154037983331523006}
   - component: {fileID: 3154037983331524105}
-  - component: {fileID: 3154037983331524110}
   - component: {fileID: 3154037983331524106}
   - component: {fileID: 3154037983331524104}
   - component: {fileID: 3154037983331522957}
@@ -78,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1944563851
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300016, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
+  m_Sprite: {fileID: 21300038, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,46 +101,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faces:
-  - {fileID: 21300006, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300008, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300010, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300012, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300014, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300006, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
-  - {fileID: 21300008, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
-  - {fileID: 21300010, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
-  - {fileID: 21300012, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
-  - {fileID: 21300014, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
-  komaBack: {fileID: 21300016, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
+  - {fileID: 21300010, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300016, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300014, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300012, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300018, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300050, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300056, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300054, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300052, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300048, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  komaBack: {fileID: 21300038, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   komaNaru:
-  - {fileID: 21300000, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300002, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300004, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
+  - {fileID: 21300036, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300034, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300032, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   cardIndex: 1
   komaBackIndex: 0
   naru: 0
   komaNariField: 0
---- !u!114 &3154037983331524110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3154037983331522563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450bd330da6ae0f4a85d6c72774e3958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 5468559360476186557, guid: 8d4f271676a5aac43abf182f3451bb34, type: 3}
-  - {fileID: 4952827958203338035, guid: 726df1700d1961b48a327f0835d67dba, type: 3}
-  xzahyou: 0
-  yzahyou: 0
-  KomaShu: 0
-  KomaNaru: 0
-  dog: {fileID: 0}
-  cat: {fileID: 0}
 --- !u!114 &3154037983331524106
 MonoBehaviour:
   m_ObjectHideFlags: 0

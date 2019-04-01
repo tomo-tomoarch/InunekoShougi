@@ -348,16 +348,22 @@ public class DirectionDeterminator : Photon.MonoBehaviour
                 Masu[masuHandler.masuNum - 11].GetComponent<MeshRenderer>().enabled = false;
                 Masu[masuHandler.masuNum - 9].GetComponent<BoxCollider2D>().enabled = false;
                 Masu[masuHandler.masuNum - 9].GetComponent<MeshRenderer>().enabled = false;
+                Masu[masuHandler.masuNum].GetComponent<BoxCollider2D>().enabled = false;
+                Masu[masuHandler.masuNum].GetComponent<MeshRenderer>().enabled = false;
             }
             else if (masuHandler.masuNum == 11 || masuHandler.masuNum == 16 || masuHandler.masuNum == 21)
             {
                 Masu[masuHandler.masuNum - 9].GetComponent<BoxCollider2D>().enabled = false;
                 Masu[masuHandler.masuNum - 9].GetComponent<MeshRenderer>().enabled = false;
+                Masu[masuHandler.masuNum].GetComponent<BoxCollider2D>().enabled = false;
+                Masu[masuHandler.masuNum].GetComponent<MeshRenderer>().enabled = false;
             }
             else if (masuHandler.masuNum == 15 || masuHandler.masuNum == 20 || masuHandler.masuNum == 25)
             {
                 Masu[masuHandler.masuNum - 11].GetComponent<BoxCollider2D>().enabled = false;
                 Masu[masuHandler.masuNum - 11].GetComponent<MeshRenderer>().enabled = false;
+                Masu[masuHandler.masuNum].GetComponent<BoxCollider2D>().enabled = false;
+                Masu[masuHandler.masuNum].GetComponent<MeshRenderer>().enabled = false;
             }
 
         }
@@ -392,16 +398,22 @@ public class DirectionDeterminator : Photon.MonoBehaviour
                 Masu[masuHandler.masuNum + 11].GetComponent<MeshRenderer>().enabled = false;
                 Masu[masuHandler.masuNum + 9].GetComponent<BoxCollider2D>().enabled = false;
                 Masu[masuHandler.masuNum + 9].GetComponent<MeshRenderer>().enabled = false;
+                Masu[masuHandler.masuNum].GetComponent<BoxCollider2D>().enabled = false;
+                Masu[masuHandler.masuNum].GetComponent<MeshRenderer>().enabled = false;
             }
             else if (masuHandler.masuNum == 11 || masuHandler.masuNum == 1 || masuHandler.masuNum == 6)
             {
                 Masu[masuHandler.masuNum + 11].GetComponent<BoxCollider2D>().enabled = false;
                 Masu[masuHandler.masuNum + 11].GetComponent<MeshRenderer>().enabled = false;
+                Masu[masuHandler.masuNum].GetComponent<BoxCollider2D>().enabled = false;
+                Masu[masuHandler.masuNum].GetComponent<MeshRenderer>().enabled = false;
             }
             else if (masuHandler.masuNum == 15 || masuHandler.masuNum == 10 || masuHandler.masuNum == 5)
             {
                 Masu[masuHandler.masuNum + 9].GetComponent<BoxCollider2D>().enabled = false;
                 Masu[masuHandler.masuNum + 9].GetComponent<MeshRenderer>().enabled = false;
+                Masu[masuHandler.masuNum].GetComponent<BoxCollider2D>().enabled = false;
+                Masu[masuHandler.masuNum].GetComponent<MeshRenderer>().enabled = false;
             }
 
         }

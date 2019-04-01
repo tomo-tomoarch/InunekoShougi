@@ -10,6 +10,10 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
 
     TurnChecker turnChecker;
 
+    GameObject[] koma;
+    Mouse mouse;
+    PlayerNetworkMover playerNetworkMover;
+
     Image redFill;
 
     [SerializeField]
@@ -67,7 +71,7 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
         if (this.turnManager.Turn > 0 || this.TimeText != null && !IsShowingResults)//ターンが0以上、TimeTextがnullでない、結果が見えていない場合。
         {
 
-            this.TimeText.text = this.turnManager.RemainingSecondsInTurn.ToString("F1") + " SECONDS";//小数点以下1桁の残り時間を表示。
+            this.TimeText.text = this.turnManager.RemainingSecondsInTurn.ToString("F1") + " ";//小数点以下1桁の残り時間を表示。"seconds "
 
             TimerFillImage.anchorMax = new Vector2(1f - this.turnManager.RemainingSecondsInTurn / this.turnManager.TurnDuration, 1f);//残り時間のバーの表示。
         }
@@ -134,9 +138,29 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
     {
         //ターンエンドで必要な処理を書く(後で使うかもしれません）
         
-            redFill = GameObject.Find("Red Fill").GetComponent<Image>();
-            redFill.enabled = true;
-                    
+        redFill = GameObject.Find("Red Fill").GetComponent<Image>();
+        redFill.enabled = true;
+
+        koma = GameObject.FindGameObjectsWithTag("koma");
+
+
+        int i;
+        for (i = 0; i < koma.Length; i++)
+        {
+            var newOwner = koma[i].GetComponent<PhotonView>().ownerId;//相手の駒のownerID
+
+            if (PhotonNetwork.player.ID == newOwner)
+            {
+                if(koma[i].GetComponent<Mouse>() == null)
+                {
+                    koma[i].AddComponent<Mouse>();
+                }
+              
+               
+                Debug.Log("mouse on");
+            }
+        }
+
     }
 
     [PunRPC]
@@ -148,12 +172,33 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
         {
             int index = 0;
             this.turnManager.SendMove(index, true);　//無条件でターン終了
-            this.WaitingText.text = "waiting for another player...";　//待ちの表示テキスト
+            this.WaitingText.text = "あいてのてばんです...";　//待ちの表示テキスト
 
             redFill = GameObject.Find("Red Fill").GetComponent<Image>();//赤いバーを表示しない
             redFill.enabled = false;
 
-            Debug.Log("RPC_AutomaticSend");
+
+            koma = GameObject.FindGameObjectsWithTag("koma");
+
+     
+            int i;
+            for (i = 0; i < koma.Length; i++)
+            {
+                var newOwner = koma[i].GetComponent<PhotonView>().ownerId;//相手の駒のownerID
+
+                if (PhotonNetwork.player.ID == newOwner)
+                {
+                    mouse = koma[i].GetComponent<Mouse>();
+                    Destroy(mouse);
+
+
+                    Debug.Log("mouse off");
+                }
+            }
+        
+
+
+                Debug.Log("RPC_AutomaticSend");
         }
         else
         {

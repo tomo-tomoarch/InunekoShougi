@@ -71,6 +71,12 @@ public class Mouse : Photon.MonoBehaviour
 
     void OnMouseUp()
     {
+        directionDeterminator = GameObject.Find("DirectionDeterminator").GetComponent<DirectionDeterminator>();
+        masuHandler = GameObject.Find("MasuHandler").GetComponent<MasuHandler>();
+        komaModel = GetComponent<KomaModel>();
+        turnCheckerEnd = GameObject.Find("TurnSystems").GetComponent<TurnCheckerEnd>();
+        turnChecker = GameObject.Find("TurnSystems").GetComponent<TurnChecker>();
+
         xzahyou = transform.position.x;
         yzahyou = transform.position.y;
         KomaShu = komaModel.cardIndex;
@@ -85,12 +91,15 @@ public class Mouse : Photon.MonoBehaviour
 
         
         koma = GameObject.FindGameObjectsWithTag("koma");
-            
+
+        var Owner = this.GetComponent<PhotonView>().ownerId; //自分の駒のownerID
 
         int i;
         for (i = 0; i < koma.Length; i++)
             {
-            if (Mathf.Abs(koma[i].transform.position.x - xzahyou) <= 0.2f && Mathf.Abs(koma[i].transform.position.y - yzahyou) <= 0.2f && Mathf.Abs(koma[i].transform.position.x - xzahyou) != 0)
+            var newOwner = koma[i].GetComponent<PhotonView>().ownerId;//相手の駒のownerID
+
+            if (Owner != newOwner && Mathf.Abs(koma[i].transform.position.x - xzahyou) <= 0.2f && Mathf.Abs(koma[i].transform.position.y - yzahyou) <= 0.2f && Mathf.Abs(koma[i].transform.position.x - xzahyou) != 0)
             {
                     //Debug.Log(koma[i].transform.position.x - xzahyou);
                     //Debug.Log(koma[i].transform.position.y - yzahyou);
@@ -114,7 +123,7 @@ public class Mouse : Photon.MonoBehaviour
                     dog.Play(0);
 
                     Vector3 temp = new Vector3(4.3f, -1.5f, -1.0f);//(-3.1f, 1.5f, -1.0f)
-                    GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("uchikoma", temp, spawnPoints[index].rotation, 0);
+                    GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("uchikoma", temp, Quaternion.identity, 0);
 
                     KomaModel cardModel = cardCopy.GetComponent<KomaModel>();
                     cardModel.cardIndex = j;
@@ -126,7 +135,7 @@ public class Mouse : Photon.MonoBehaviour
                     cat.Play(0);
 
                     Vector3 temp = new Vector3(-3.1f, 1.5f, -1.0f);
-                    GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("uchineko", temp, spawnPoints[index].rotation, 0);
+                    GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("uchineko", temp, Quaternion.Euler(180,180,0), 0);
 
                     KomaModel cardModel = cardCopy.GetComponent<KomaModel>();
                     cardModel.cardIndex = j;
@@ -138,7 +147,7 @@ public class Mouse : Photon.MonoBehaviour
                     dog.Play(0);
 
                     Vector3 temp = new Vector3(4.3f, -1.5f, -1.0f);//(-3.1f, 1.5f, -1.0f)
-                    GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("matatabi", temp, spawnPoints[index].rotation, 0);
+                    GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("matatabi", temp, Quaternion.identity, 0);
 
                     KomaModel cardModel = cardCopy.GetComponent<KomaModel>();
                     cardModel.cardIndex = j;
@@ -150,7 +159,7 @@ public class Mouse : Photon.MonoBehaviour
                     cat.Play(0);
 
                     Vector3 temp = new Vector3(-3.1f, 1.5f, -1.0f);
-                    GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("hone", temp, spawnPoints[index].rotation, 0);
+                    GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("hone", temp, Quaternion.Euler(180, 180, 0), 0);
 
                     KomaModel cardModel = cardCopy.GetComponent<KomaModel>();
                     cardModel.cardIndex = j;

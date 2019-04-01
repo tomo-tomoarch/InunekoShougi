@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6536977624153783900}
   - component: {fileID: 6536977624153783832}
-  - component: {fileID: 6536977624153782696}
   - component: {fileID: 6536977624153783851}
   - component: {fileID: 6536977624153783843}
   - component: {fileID: 6536977624153782697}
@@ -77,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 1944563851
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
+  m_Sprite: {fileID: 21300028, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,27 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6536977624153782696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6536977624153784229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450bd330da6ae0f4a85d6c72774e3958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 5468559360476186557, guid: 8d4f271676a5aac43abf182f3451bb34, type: 3}
-  - {fileID: 4952827958203338035, guid: 726df1700d1961b48a327f0835d67dba, type: 3}
-  xzahyou: 0
-  yzahyou: 0
-  KomaShu: 0
-  KomaNaru: 0
-  dog: {fileID: 0}
-  cat: {fileID: 0}
 --- !u!50 &6536977624153783851
 Rigidbody2D:
   serializedVersion: 4
@@ -209,15 +187,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faces:
-  - {fileID: 21300000, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
-  - {fileID: 21300000, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
-  - {fileID: 21300000, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
-  - {fileID: 21300000, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
-  - {fileID: 21300000, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
-  - {fileID: 21300000, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
-  komaBack: {fileID: 21300000, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
+  - {fileID: 21300028, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300028, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300028, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300028, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300028, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300028, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  komaBack: {fileID: 21300028, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   komaNaru:
-  - {fileID: 21300000, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
+  - {fileID: 21300028, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   cardIndex: 0
   komaBackIndex: 0
   naru: 0

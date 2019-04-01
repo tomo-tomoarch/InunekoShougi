@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 1944563851
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300034, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
+  m_Sprite: {fileID: 21300030, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,24 +102,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faces:
-  - {fileID: 21300024, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300026, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300028, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300030, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300032, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300024, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
-  - {fileID: 21300026, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
-  - {fileID: 21300028, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
-  - {fileID: 21300030, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
-  - {fileID: 21300032, guid: 9719f34f2b559284face36ccfabdf646, type: 3}
-  komaBack: {fileID: 21300034, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
+  - {fileID: 21300000, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300006, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300004, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300002, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300008, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300040, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300046, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300044, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300042, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300048, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  komaBack: {fileID: 21300030, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   komaNaru:
-  - {fileID: 21300018, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300020, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
-  - {fileID: 21300022, guid: cb3fbc4835868064b85f08166e2c7e54, type: 3}
+  - {fileID: 21300026, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300024, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300022, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   cardIndex: 1
   komaBackIndex: 0
   naru: 0
+  komaNariField: 0
 --- !u!114 &1355841766983253531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +140,6 @@ MonoBehaviour:
   yzahyou: 0
   KomaShu: 0
   KomaNaru: 0
-  YukoGoma: 0
   dog: {fileID: 0}
   cat: {fileID: 0}
 --- !u!114 &1355841766983253524

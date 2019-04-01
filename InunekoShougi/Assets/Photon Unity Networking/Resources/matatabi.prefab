@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1944563851
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
+  m_Sprite: {fileID: 21300020, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -209,15 +209,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faces:
-  - {fileID: 21300002, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
-  - {fileID: 21300002, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
-  - {fileID: 21300002, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
-  - {fileID: 21300002, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
-  - {fileID: 21300002, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
-  - {fileID: 21300002, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
-  komaBack: {fileID: 21300002, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
+  - {fileID: 21300020, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300020, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300020, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300020, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300020, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300020, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  komaBack: {fileID: 21300020, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   komaNaru:
-  - {fileID: 21300002, guid: 571892f813b144c4ba6a2c071d38e418, type: 3}
+  - {fileID: 21300020, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   cardIndex: 0
   komaBackIndex: 0
   naru: 0
