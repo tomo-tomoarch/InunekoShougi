@@ -28,6 +28,24 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
     [SerializeField]
     private Text WaitingText;//待ってくださいのテキスト
 
+    //[SerializeField]
+    //private Text YourTurnText;
+
+    [SerializeField]
+    private Text ShoumeiText;
+
+    //[SerializeField]
+    //private Text WinText;
+
+    //[SerializeField]
+    //private Text LoseText;
+
+
+    private int flagNumber;
+
+
+
+
     private int number=0;
 
     private bool IsShowingResults;//真偽値
@@ -161,7 +179,35 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
             }
         }
 
+        flagNumber = 0;
+
+        for (i = 0; i < koma.Length; i++)
+        {
+            var newOwner = koma[i].GetComponent<PhotonView>().ownerId;//駒のownerID
+            var komaModel = koma[i].GetComponent<KomaModel>();
+            if (komaModel.flag == false && PhotonNetwork.player.ID == newOwner)
+            {
+                flagNumber++;
+                Debug.Log(flagNumber + "flagnum");
+            }
+        }
+
+        if (flagNumber == 0 && this.turnManager.Turn > 2)
+        {
+            this.ShoumeiText.text = "王将がいないことがしょうめいされました";
+
+            PhotonView.RPC("RPC_WinLoseInfo", PhotonTargets.All);
+
+        }
+
     }
+
+    [PunRPC]
+    public void RPC_WinLoseInfo()
+    {
+
+    }
+
 
     [PunRPC]
     public void RPC_AutomaticSend()

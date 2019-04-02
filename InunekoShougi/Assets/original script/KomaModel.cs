@@ -16,6 +16,8 @@ public class KomaModel : MonoBehaviour
     public bool naru;
     public int komaNariField;
 
+    public bool flag;//flag スクリプト
+
     public void ToggleFace(int showFace)　//外部アクセス可能なToggleFaceというメソッドの定義　引数に真偽値としてshowFaceを取る。
     {
 
