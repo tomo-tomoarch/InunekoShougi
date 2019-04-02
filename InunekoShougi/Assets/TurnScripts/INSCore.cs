@@ -43,6 +43,10 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
 
     private int flagNumber;
 
+   
+
+    INSCore insCore;
+
 
 
 
@@ -188,17 +192,18 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
             if (komaModel.flag == false && PhotonNetwork.player.ID == newOwner)
             {
                 flagNumber++;
-                Debug.Log(flagNumber + "flagnum");
             }
         }
 
-        if (flagNumber == 0 && this.turnManager.Turn > 2)
+        if (flagNumber == 0 && this.turnManager.Turn > 2 )
         {
-            this.ShoumeiText.text = "王将がいないことがしょうめいされました";
-            this.LoseText.text = "あなたのまけです";
+            if ((this.turnManager.Turn % 2)== PhotonNetwork.player.ID)
+            {
+                this.ShoumeiText.text = "王将がいないことがしょうめいされました";
+                this.LoseText.text = "あなたのまけです";
 
-            PhotonView.RPC("RPC_WinLoseInfo", PhotonTargets.Others);
-
+                PhotonView.RPC("RPC_WinLoseInfo", PhotonTargets.Others);
+            }
         }
 
     }
