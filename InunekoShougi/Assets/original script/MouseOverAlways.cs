@@ -33,7 +33,7 @@ public class MouseOverAlways : Photon.MonoBehaviour, IPointerEnterHandler, IPoin
     public void OnPointerExit(PointerEventData eventData)
     {
       
-            flipper.FlipCard(komaModel.faces[komaModel.cardIndex], komaModel.komaBack, -1);
+            flipper.FlipCard(komaModel.faces[komaModel.cardIndex], komaModel.komaBack[komaModel.cardIndex], -1);
             //カードを裏返すアニメーション処理の呼出
        
     }

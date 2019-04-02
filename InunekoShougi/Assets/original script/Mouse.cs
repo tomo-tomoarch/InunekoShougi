@@ -20,6 +20,8 @@ public class Mouse : Photon.MonoBehaviour
     public int KomaShu;
     public int KomaNaru;
 
+    public int number = 0;//mouse up only 対策
+
 
     public AudioSource dog;
     public AudioSource cat;
@@ -40,7 +42,9 @@ public class Mouse : Photon.MonoBehaviour
 
     void OnMouseDown()
     {
-            this.screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        number = 0;//mouse up only 対策
+
+        this.screenPoint = Camera.main.WorldToScreenPoint(transform.position);
             this.offset = transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
         xzahyou = transform.position.x;
@@ -58,6 +62,7 @@ public class Mouse : Photon.MonoBehaviour
 
         turnChecker.TurnCheck();
 
+        number++;//mouse up only 対策
     }
 
     void OnMouseDrag()
@@ -99,7 +104,7 @@ public class Mouse : Photon.MonoBehaviour
             {
             var newOwner = koma[i].GetComponent<PhotonView>().ownerId;//相手の駒のownerID
 
-            if (Owner != newOwner && Mathf.Abs(koma[i].transform.position.x - xzahyou) <= 0.2f && Mathf.Abs(koma[i].transform.position.y - yzahyou) <= 0.2f && Mathf.Abs(koma[i].transform.position.x - xzahyou) != 0)
+            if (Owner != newOwner && Mathf.Abs(koma[i].transform.position.x - xzahyou) <= 0.4f && Mathf.Abs(koma[i].transform.position.y - yzahyou) <= 0.4f && Mathf.Abs(koma[i].transform.position.x - xzahyou) != 0)
             {
                     //Debug.Log(koma[i].transform.position.x - xzahyou);
                     //Debug.Log(koma[i].transform.position.y - yzahyou);
@@ -168,6 +173,10 @@ public class Mouse : Photon.MonoBehaviour
             }
         }
 
-        turnCheckerEnd.TurnCheckEnd();
+        if(number > 0)//mouse up only 対策
+        {
+            turnCheckerEnd.TurnCheckEnd();
+        }
+        
     } 
 }

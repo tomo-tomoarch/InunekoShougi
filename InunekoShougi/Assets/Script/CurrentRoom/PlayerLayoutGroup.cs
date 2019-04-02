@@ -18,6 +18,16 @@ public class PlayerLayoutGroup : MonoBehaviour
         get { return _playerListings; }
     }
 
+    public AudioSource dog;
+    public AudioSource cat;
+    private PhotonView PhotonView;
+
+
+    private void Awake()
+    {
+        PhotonView = GetComponent<PhotonView>();
+    }
+
     //called by photon whenever you join a room.
     private void OnJoinedRoom()
     {
@@ -33,6 +43,16 @@ public class PlayerLayoutGroup : MonoBehaviour
         {
             PlayerJoinedRoom(photonPlayers[i]);
         }
+        if(photonPlayers.Length == 1)
+        {
+            PhotonView.RPC("RPC_Dog", PhotonTargets.All);
+        }
+        else
+        {
+            PhotonView.RPC("RPC_Cat", PhotonTargets.All);
+        }
+        
+
     }
     
     //Called by photon whenever the master client is switched.
@@ -47,6 +67,7 @@ public class PlayerLayoutGroup : MonoBehaviour
     private void OnPhotonPlayerConnected(PhotonPlayer photonPlayer)
     {
         PlayerJoinedRoom(photonPlayer);
+        
     }
 
     //Called by photon when a player leaves the room.
@@ -97,4 +118,21 @@ public class PlayerLayoutGroup : MonoBehaviour
     {
         PhotonNetwork.LeaveRoom();
     }
+
+    [PunRPC]
+    private void RPC_Dog()
+    {
+
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        audioSources[0].Play(0);
+    }
+
+    [PunRPC]
+    private void RPC_Cat()
+    {
+
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        audioSources[1].Play(0);
+    }
+       
 }

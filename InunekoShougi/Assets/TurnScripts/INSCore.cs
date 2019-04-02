@@ -41,7 +41,7 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
     {
         this.turnManager = this.gameObject.AddComponent<PunTurnManager>();//PunTurnManagerをコンポーネントに追加
         this.turnManager.TurnManagerListener = this;//リスナーを？
-        this.turnManager.TurnDuration = 15f;//ターンは5秒にする
+        this.turnManager.TurnDuration = 30f;//ターンは30秒にする
 
         PhotonView = GameObject.Find("TurnSystems").GetComponent<PhotonView>();//scriptsにphotonviewを付けておくのを忘れずに。
         turnChecker = GameObject.Find("TurnSystems").GetComponent<TurnChecker>();
@@ -53,10 +53,10 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
         int j;
         for (j = 0; j < 11; j++)
         {
-            var properties = new ExitGames.Client.Photon.Hashtable();
-            string card = PhotonNetwork.player.ID + "komaPosition" + j;
-            properties.Add(card, null);　//ルームカスタムプロパティのリセット
-            PhotonNetwork.room.SetCustomProperties(properties);
+           var properties = new ExitGames.Client.Photon.Hashtable();
+           string card = PhotonNetwork.player.ID + "komaPosition" + j;
+           properties.Add(card, null);　//ルームカスタムプロパティのリセット
+           PhotonNetwork.room.SetCustomProperties(properties);
         }
     }
 

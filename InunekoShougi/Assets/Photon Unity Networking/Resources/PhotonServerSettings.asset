@@ -47,4 +47,7 @@ MonoBehaviour:
   - RPC_LoadedGameScene
   - RPC_LoadGameOthers
   - RPC_AutomaticSend
+  - RPC_Sound
+  - RPC_Cat
+  - RPC_Dog
   DisableAutoOpenWizard: 1

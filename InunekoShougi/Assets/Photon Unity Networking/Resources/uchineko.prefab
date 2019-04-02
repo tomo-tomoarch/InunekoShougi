@@ -107,7 +107,12 @@ MonoBehaviour:
   - {fileID: 21300054, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   - {fileID: 21300052, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   - {fileID: 21300058, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
-  komaBack: {fileID: 21300078, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  komaBack:
+  - {fileID: 21300050, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300056, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300054, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300052, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
+  - {fileID: 21300058, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   komaNaru:
   - {fileID: 21300076, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   - {fileID: 21300074, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
@@ -389,5 +394,6 @@ MonoBehaviour:
   yzahyou: 0
   KomaShu: 0
   KomaNaru: 0
+  number: 0
   dog: {fileID: 0}
   cat: {fileID: 0}

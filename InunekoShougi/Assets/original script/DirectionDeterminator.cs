@@ -18,7 +18,7 @@ public class DirectionDeterminator : Photon.MonoBehaviour
 
     public void DirectionDetermine(bool Naru, int Shu, int field)
     {
-        if (Naru == false && Shu == 0 && PhotonNetwork.player.ID == 1)//金の場合
+        if (Shu == 0 && PhotonNetwork.player.ID == 1)//金の場合
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0)
             {
@@ -166,7 +166,7 @@ public class DirectionDeterminator : Photon.MonoBehaviour
             }
 
         }
-        else if (Naru == false && Shu == 0 && PhotonNetwork.player.ID != 1)//金の場合 neko
+        else if ( Shu == 0 && PhotonNetwork.player.ID != 1)//金の場合 neko
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0)
             {
@@ -1383,7 +1383,7 @@ public class DirectionDeterminator : Photon.MonoBehaviour
                 Masu[6].GetComponent<MeshRenderer>().enabled = true;
             }
         }
-        else if (Naru == false && Shu == 4 && PhotonNetwork.player.ID == 1)//玉の場合 inu
+        else if (Shu == 4 && PhotonNetwork.player.ID == 1)//玉の場合 inu
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0)
             {
@@ -1547,7 +1547,7 @@ public class DirectionDeterminator : Photon.MonoBehaviour
             }
 
         }
-        else if (Naru == false && Shu == 4 && PhotonNetwork.player.ID != 1)//玉の場合 neko 
+        else if (Shu == 4 && PhotonNetwork.player.ID != 1)//玉の場合 neko 
         {
             if (masuHandler.masuNum == 26 || masuHandler.masuNum == 0)
             {
