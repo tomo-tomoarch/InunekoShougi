@@ -28,17 +28,17 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
     [SerializeField]
     private Text WaitingText;//待ってくださいのテキスト
 
-    //[SerializeField]
-    //private Text YourTurnText;
+    [SerializeField]
+    private Text YourTurnText;
 
     [SerializeField]
     private Text ShoumeiText;
 
-    //[SerializeField]
-    //private Text WinText;
+    [SerializeField]
+    private Text WinText;
 
-    //[SerializeField]
-    //private Text LoseText;
+    [SerializeField]
+    private Text LoseText;
 
 
     private int flagNumber;
@@ -195,8 +195,9 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
         if (flagNumber == 0 && this.turnManager.Turn > 2)
         {
             this.ShoumeiText.text = "王将がいないことがしょうめいされました";
+            this.LoseText.text = "あなたのまけです";
 
-            PhotonView.RPC("RPC_WinLoseInfo", PhotonTargets.All);
+            PhotonView.RPC("RPC_WinLoseInfo", PhotonTargets.Others);
 
         }
 
@@ -205,7 +206,7 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
     [PunRPC]
     public void RPC_WinLoseInfo()
     {
-
+        this.WinText.text = "あなたのかちです";
     }
 
 
@@ -219,6 +220,7 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
             int index = 0;
             this.turnManager.SendMove(index, true);　//無条件でターン終了
             this.WaitingText.text = "あいてのてばんです...";　//待ちの表示テキスト
+            this.YourTurnText.text = "";
 
             redFill = GameObject.Find("Red Fill").GetComponent<Image>();//赤いバーを表示しない
             redFill.enabled = false;
@@ -249,7 +251,7 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
         else
         {
             this.WaitingText.text = "";
-            
+            this.YourTurnText.text = "あなたのてばんです";
         }
     }
 }
