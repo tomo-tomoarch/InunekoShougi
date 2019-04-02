@@ -45,7 +45,7 @@ public class Mouse : Photon.MonoBehaviour
         number = 0;//mouse up only 対策
 
         this.screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-            this.offset = transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+        this.offset = transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
         xzahyou = transform.position.x;
         yzahyou = transform.position.y;
@@ -67,10 +67,14 @@ public class Mouse : Photon.MonoBehaviour
 
     void OnMouseDrag()
     {
+        Vector3 currentScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+        Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenPoint) + this.offset;
+        if (currentPosition.z != -1.0f)//drag 対策
+        {
+            currentPosition.z = -1.0f;//drag 対策
+        }
+        transform.position = currentPosition;
         
-         Vector3 currentScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-         Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenPoint) + this.offset;
-         transform.position = currentPosition;
         
     }
 
