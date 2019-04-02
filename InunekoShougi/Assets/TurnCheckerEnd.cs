@@ -11,7 +11,7 @@ public class TurnCheckerEnd : Photon.MonoBehaviour
     float y;
     int masuNum;
     int owner;
-    int move;
+
 
     private void Start()
     {
@@ -215,250 +215,57 @@ public class TurnCheckerEnd : Photon.MonoBehaviour
 
         if(endkomaPosition[0] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition0"])//駒の現在値とルームカスタムプロパティの値を比べる
         {
-            if( (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition0"] == 26 )
-            {
-                komaModel = koma[0].GetComponent<KomaModel>();
-                komaModel.flag = false;//フラグを折る
-            }
-
-            if((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition0"] != 26)//駒を打ってない場合
-            {
-                move = Mathf.Abs((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition0"] - endkomaPosition[0]);//移動したマスの絶対値が
-                if (move != 1 && move != 4 && move != 5 && move != 6)//王の動ける範囲でない場合
-                {
-                    komaModel = koma[0].GetComponent<KomaModel>();
-                    komaModel.flag = true;//フラグを立てる
-                }
-            }
-            
-
-            Debug.Log(move);
-
+            Debug.Log(endkomaPosition[0]);
             insCore.MakeTurn(0);//値が違う場合ターンを回す
         }
         if (endkomaPosition[1] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition1"])
         {
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition1"] == 26)
-            {
-                komaModel = koma[1].GetComponent<KomaModel>();
-                komaModel.flag = false;//フラグを折る
-            }
-
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition1"] != 26)
-            {
-                move = Mathf.Abs((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition1"] - endkomaPosition[1]);
-                if (move != 1 && move != 4 && move != 5 && move != 6)
-                {
-                    komaModel = koma[1].GetComponent<KomaModel>();
-                    komaModel.flag = true;
-                }
-            }
-               
-
-            Debug.Log(move);
-
+            Debug.Log(endkomaPosition[1]);
             insCore.MakeTurn(1);
         }
            if (endkomaPosition[2] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition2"])
         {
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition2"] == 26)
-            {
-                komaModel = koma[2].GetComponent<KomaModel>();
-                komaModel.flag = false;//フラグを折る
-            }
-
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition2"] != 26)
-           {
-                move = Mathf.Abs((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition2"] - endkomaPosition[2]);
-                if (move != 1 && move != 4 && move != 5 && move != 6)
-                {
-                    komaModel = koma[2].GetComponent<KomaModel>();
-                    komaModel.flag = true;
-                }
-           }
-               
-
-            Debug.Log(move);
-
+            Debug.Log(endkomaPosition[2]);
             insCore.MakeTurn(2);
         }
            if (endkomaPosition[3] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition3"])
         {
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition3"] == 26)
-            {
-                komaModel = koma[3].GetComponent<KomaModel>();
-                komaModel.flag = false;//フラグを折る
-            }
-
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition3"] != 26)
-           {
-                move = Mathf.Abs((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition3"] - endkomaPosition[3]);
-                if (move != 1 && move != 4 && move != 5 && move != 6)
-                {
-                    komaModel = koma[3].GetComponent<KomaModel>();
-                    komaModel.flag = true;
-                }
-
-           }
-
-            Debug.Log(move);
-
+            Debug.Log(endkomaPosition[3]);
             insCore.MakeTurn(3);
         }
            if (endkomaPosition[4] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition4"])
         {
-           if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition4"] == 26)
-            {
-                komaModel = koma[4].GetComponent<KomaModel>();
-                komaModel.flag = false;//フラグを折る
-            }
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition4"] != 26)
-            {
-                move = Mathf.Abs((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition4"] - endkomaPosition[4]);
-                if (move != 1 && move != 4 && move != 5 && move != 6)
-                {
-                    komaModel = koma[4].GetComponent<KomaModel>();
-                    komaModel.flag = true;
-                }
-            }
-                
-
-            Debug.Log(move);
-
+            Debug.Log(endkomaPosition[4]);
             insCore.MakeTurn(4);
         }
            if (endkomaPosition[5] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition5"])
         {
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition5"] == 26)
-            {
-                komaModel = koma[5].GetComponent<KomaModel>();
-                komaModel.flag = false;//フラグを折る
-            }
-
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition5"] != 26)
-            {
-                move = Mathf.Abs((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition5"] - endkomaPosition[5]);
-                if (move != 1 && move != 4 && move != 5 && move != 6)
-                {
-                    komaModel = koma[5].GetComponent<KomaModel>();
-                    komaModel.flag = true;
-                }
-            }
-               
-
-            Debug.Log(move);
-
+            Debug.Log(endkomaPosition[5]);
             insCore.MakeTurn(5);
         }
            if (endkomaPosition[6] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition6"])
         {
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition6"] == 26)
-            {
-                komaModel = koma[6].GetComponent<KomaModel>();
-                komaModel.flag = false;//フラグを折る
-            }
-
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition6"] != 26)
-            {
-                move = Mathf.Abs((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition6"] - endkomaPosition[6]);
-                if (move != 1 && move != 4 && move != 5 && move != 6)
-                {
-                    komaModel = koma[6].GetComponent<KomaModel>();
-                    komaModel.flag = true;
-                }
-            }
-               
-
-            Debug.Log(move);
-
+            Debug.Log(endkomaPosition[6]);
             insCore.MakeTurn(6);
         }
            if (endkomaPosition[7] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition7"])
         {
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition7"] == 26)
-            {
-                komaModel = koma[7].GetComponent<KomaModel>();
-                komaModel.flag = false;//フラグを折る
-            }
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition7"] != 26)
-            {
-                move = Mathf.Abs((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition7"] - endkomaPosition[7]);
-                if (move != 1 && move != 4 && move != 5 && move != 6)
-                {
-                    komaModel = koma[7].GetComponent<KomaModel>();
-                    komaModel.flag = true;
-                }
-            }
-               
-
-            Debug.Log(move);
-
+            Debug.Log(endkomaPosition[7]);
             insCore.MakeTurn(7);
         }
            if (endkomaPosition[8] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition8"])
         {
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition8"] == 26)
-            {
-                komaModel = koma[8].GetComponent<KomaModel>();
-                komaModel.flag = false;//フラグを折る
-            }
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition8"] != 26)
-            {
-                move = Mathf.Abs((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition8"] - endkomaPosition[8]);
-                if (move != 1 && move != 4 && move != 5 && move != 6)
-                {
-                    komaModel = koma[8].GetComponent<KomaModel>();
-                    komaModel.flag = true;
-                }
-            }
-               
-
-            Debug.Log(move);
-
+            Debug.Log(endkomaPosition[8]);
             insCore.MakeTurn(8);
         }
            if (endkomaPosition[9] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition9"])
         {
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition9"] == 26)
-            {
-                komaModel = koma[9].GetComponent<KomaModel>();
-                komaModel.flag = false;//フラグを折る
-            }
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition9"] != 26)
-            {
-                move = Mathf.Abs((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition9"] - endkomaPosition[9]);
-                if (move != 1 && move != 4 && move != 5 && move != 6)
-                {
-                    komaModel = koma[9].GetComponent<KomaModel>();
-                    komaModel.flag = true;
-                }
-            }
-                
-
-            Debug.Log(move);
-
+            Debug.Log(endkomaPosition[9]);
             insCore.MakeTurn(9);
         }
            if (endkomaPosition[10] != (int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition10"])
         {
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition10"] == 26)
-            {
-                komaModel = koma[10].GetComponent<KomaModel>();
-                komaModel.flag = false;//フラグを折る
-            }
-            if ((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition10"] != 26)
-            {
-                move = Mathf.Abs((int)PhotonNetwork.room.customProperties[PhotonNetwork.player.ID + "komaPosition10"] - endkomaPosition[10]);
-                if (move != 1 && move != 4 && move != 5 && move != 6)
-                {
-                    komaModel = koma[10].GetComponent<KomaModel>();
-                    komaModel.flag = true;
-                }
-            }
-               
-
-            Debug.Log(move);
-
+            Debug.Log(endkomaPosition[10]);
             insCore.MakeTurn(10);
         }
     

@@ -50,5 +50,4 @@ MonoBehaviour:
   - RPC_Sound
   - RPC_Cat
   - RPC_Dog
-  - RPC_WinLoseInfo
   DisableAutoOpenWizard: 1
