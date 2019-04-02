@@ -107,11 +107,6 @@ MonoBehaviour:
   - {fileID: 21300004, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   - {fileID: 21300002, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   - {fileID: 21300008, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
-  - {fileID: 21300040, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
-  - {fileID: 21300046, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
-  - {fileID: 21300044, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
-  - {fileID: 21300042, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
-  - {fileID: 21300048, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   komaBack:
   - {fileID: 21300030, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
   - {fileID: 21300030, guid: 9f71c277dac99a44192d3bd8dbaf8f9b, type: 3}
@@ -126,6 +121,7 @@ MonoBehaviour:
   komaBackIndex: 0
   naru: 0
   komaNariField: 0
+  flag: 1
 --- !u!114 &1355841766983253531
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -28,7 +28,22 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
     [SerializeField]
     private Text WaitingText;//待ってくださいのテキスト
 
+    [SerializeField]
+    private Text YourTurnText;
+
+    [SerializeField]
+    private Text ShoumeiText;
+
+    [SerializeField]
+    private Text WinText;
+
+    [SerializeField]
+    private Text LoseText;
+
+
     private int number=0;
+
+    private int flagNumber;
 
     private bool IsShowingResults;//真偽値
 
@@ -97,12 +112,14 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
         //Debug.Log("OnTurnBegins() turn: " + turn);
 
         IsShowingResults = false;
+        this.ShoumeiText.text = "";
     }
 
     public void OnTurnCompleted(int obj)//4ターン終了時に呼ばれるメソッド　（あなたのターン開始・終了みたいな文字を出す）
     {
        // Debug.Log("OnTurnCompleted: " + obj);
-        this.OnEndTurn();//エンドターンに必要な処理をします
+        
+        this.StartCoroutine("OnEndTurnCoroutine");//
         this.StartTurn();
     }
 
@@ -133,35 +150,78 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
     {
         this.turnManager.SendMove(index, true);//アクションを送るときに呼ぶ（アクション,ターンを終了するかどうか(true)）
     }
-
-    public void OnEndTurn()//エンドターンのメソッド
+   
+    public IEnumerator OnEndTurnCoroutine()//エンドターンのメソッド
     {
         //ターンエンドで必要な処理を書く(後で使うかもしれません）
         
         redFill = GameObject.Find("Red Fill").GetComponent<Image>();
         redFill.enabled = true;
 
+       
+
         koma = GameObject.FindGameObjectsWithTag("koma");
 
+        flagNumber = 0;
 
         int i;
         for (i = 0; i < koma.Length; i++)
         {
-            var newOwner = koma[i].GetComponent<PhotonView>().ownerId;//相手の駒のownerID
-
-            if (PhotonNetwork.player.ID == newOwner)
+            var newOwner = koma[i].GetComponent<PhotonView>().ownerId;//駒のownerID
+            
+            if (PhotonNetwork.player.ID == newOwner)//駒が自分の駒であれば
             {
-                if(koma[i].GetComponent<Mouse>() == null)
+                if (koma[i].GetComponent<Mouse>() == null)//マウスがついてなければ
                 {
-                    koma[i].AddComponent<Mouse>();
+                    koma[i].AddComponent<Mouse>();//マウスを付けます
                 }
-              
-               
+
                 Debug.Log("mouse on");
             }
         }
 
+        yield return new WaitForSeconds(0.1f);
+
+        for (i = 0; i < koma.Length; i++)
+        {
+            var newOwner = koma[i].GetComponent<PhotonView>().ownerId;//駒のownerID
+            var flag = koma[i].GetComponent<KomaModel>();
+            if(flag.flag == false && PhotonNetwork.player.ID == newOwner)
+            {
+                flagNumber++;
+                Debug.Log(flagNumber + "flagnum");
+            }
+        }
+
+        if (flagNumber == 0 && this.turnManager.Turn > 2)
+        {
+            this.ShoumeiText.text = "王将がいないことがしょうめいされました";
+
+            PhotonView.RPC("RPC_WinLoseInfo", PhotonTargets.All);
+            
+        }
+
     }
+
+
+    [PunRPC]
+    public void RPC_WinLoseInfo()
+    {
+        Destroy(turnManager);
+
+        if(PhotonNetwork.player.ID != 1)
+        {
+            this.WinText.text = "あなたのかちです";
+            this.LoseText.text = "";
+        }
+        else
+        {
+            this.WinText.text = "";
+            this.LoseText.text = "あなたのまけです";
+        }
+    }
+
+
 
     [PunRPC]
     public void RPC_AutomaticSend()
@@ -173,6 +233,7 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
             int index = 0;
             this.turnManager.SendMove(index, true);　//無条件でターン終了
             this.WaitingText.text = "あいてのてばんです...";　//待ちの表示テキスト
+            this.YourTurnText.text = "";
 
             redFill = GameObject.Find("Red Fill").GetComponent<Image>();//赤いバーを表示しない
             redFill.enabled = false;
@@ -191,19 +252,15 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
                     mouse = koma[i].GetComponent<Mouse>();
                     Destroy(mouse);
 
-
                     Debug.Log("mouse off");
                 }
             }
         
-
-
-                Debug.Log("RPC_AutomaticSend");
         }
         else
         {
             this.WaitingText.text = "";
-            
+            this.YourTurnText.text = "あなたのてばんです";
         }
     }
 }

@@ -15,6 +15,7 @@ public class KomaModel : MonoBehaviour
     public int komaBackIndex;
     public bool naru;
     public int komaNariField;
+    public bool flag;
 
     public void ToggleFace(int showFace)　//外部アクセス可能なToggleFaceというメソッドの定義　引数に真偽値としてshowFaceを取る。
     {
@@ -53,27 +54,8 @@ public class KomaModel : MonoBehaviour
             else
             {
                 naru = false;
-                if (cardIndex == 0)//金の場合
-                {
-                    spriteRenderer.sprite = komaBack[0];
-                }
-                else if (cardIndex == 1)//桂馬の場合
-                {
-                    spriteRenderer.sprite = komaBack[1];
-                }
-                else if (cardIndex == 2)//飛車の場合
-                {
-                    spriteRenderer.sprite = komaBack[2];
-                }
-                else if (cardIndex == 3)//角の場合
-                {
-                    spriteRenderer.sprite = komaBack[3];
-                }
-                else if (cardIndex == 4)//玉の場合
-                {
-                    spriteRenderer.sprite = komaBack[4];
-                }
-                　
+               
+                spriteRenderer.sprite = komaBack[cardIndex];
             }
 
         }

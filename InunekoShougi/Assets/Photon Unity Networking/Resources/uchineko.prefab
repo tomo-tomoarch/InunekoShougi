@@ -121,6 +121,7 @@ MonoBehaviour:
   komaBackIndex: 0
   naru: 0
   komaNariField: 1
+  flag: 1
 --- !u!114 &4656278440437932885
 MonoBehaviour:
   m_ObjectHideFlags: 0
