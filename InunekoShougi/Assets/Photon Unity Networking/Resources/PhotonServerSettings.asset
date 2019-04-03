@@ -51,4 +51,8 @@ MonoBehaviour:
   - RPC_Cat
   - RPC_Dog
   - RPC_WinLoseInfo
+  - RPC_LoseInfo
+  - RPC_WinInfo
+  - RPC_DestroyTimeManager
+  - RPC_ShoumeiInfo
   DisableAutoOpenWizard: 1

@@ -195,23 +195,69 @@ public class INSCore : PunBehaviour, IPunTurnManagerCallbacks// このコール�
             }
         }
 
+        Debug.Log(flagNumber);
+        
+
         if (flagNumber == 0 && this.turnManager.Turn > 2 )
         {
-            if ((this.turnManager.Turn % 2)== PhotonNetwork.player.ID)
+            /*
+            var properties = new ExitGames.Client.Photon.Hashtable();
+            string lose = PhotonNetwork.player.ID + "lose";
+            properties.Add(lose, true); //ルームカスタムプロパティのリセット
+            PhotonNetwork.room.SetCustomProperties(properties);
+            */
+
+            this.ShoumeiText.text = "王将がいないことがしょうめいされました";
+            this.LoseText.text = "あなたのまけです";
+            PhotonView.RPC("RPC_WinInfo", PhotonTargets.Others);
+            PhotonView.RPC("RPC_DestroyTimeManager", PhotonTargets.All);
+            
+            
+            /*
+            Debug.Log((bool)PhotonNetwork.room.customProperties[1 + "lose"]);
+            Debug.Log((bool)PhotonNetwork.room.customProperties[2 + "lose"]);
+
+            if ((bool)PhotonNetwork.room.customProperties[1 + "lose"] == true &&(bool)PhotonNetwork.room.customProperties[2 + "lose"] ==true)
             {
-                this.ShoumeiText.text = "王将がいないことがしょうめいされました";
-                this.LoseText.text = "あなたのまけです";
+                Debug.Log("true&true");
 
-                PhotonView.RPC("RPC_WinLoseInfo", PhotonTargets.Others);
+                if ((this.turnManager.Turn % 2) == PhotonNetwork.player.ID % 2)
+                {
+                    Destroy(WinText);
+                    PhotonView.RPC("RPC_ShoumeiInfo", PhotonTargets.Others);
+                    Debug.Log("destroy");
+                }
             }
+            */
         }
-
+        /*
+        else
+        {
+            var properties = new ExitGames.Client.Photon.Hashtable();
+            string lose = PhotonNetwork.player.ID + "lose";
+            properties.Add(lose, false); //ルームカスタムプロパティのリセット
+            PhotonNetwork.room.SetCustomProperties(properties);
+        }*/
+      
     }
 
     [PunRPC]
-    public void RPC_WinLoseInfo()
+    public void RPC_WinInfo()
     {
         this.WinText.text = "あなたのかちです";
+    }
+
+    [PunRPC]
+    public void RPC_ShoumeiInfo()
+    {
+        Destroy(ShoumeiText);
+    }
+
+
+    [PunRPC]
+    public void RPC_DestroyTimeManager()
+    {
+        Destroy(this.turnManager);
     }
 
 
